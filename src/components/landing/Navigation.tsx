@@ -35,18 +35,15 @@ export default function Navigation() {
           href="/"
           className="flex items-center justify-start w-auto gap-[8px] cursor-pointer min-h-[36px] flex-shrink-0"
         >
-          <div className="relative w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]">
+          <div className="relative h-[28px] sm:h-[32px] w-[80px] sm:w-[92px]">
             <Image
-              src="/images/landing/star-logo.png"
-              alt="Rheii Logo"
+              src="/images/landing/rheii-logo.png"
+              alt="Rheii"
               fill
-              className="object-cover brightness-0"
+              className="object-contain object-left"
               priority
             />
           </div>
-          <span className="font-heading font-light text-[16px] sm:text-[18px] leading-[20px] sm:leading-[24px] text-black">
-            Rheii
-          </span>
         </a>
 
         {/* Navigation Items + Waitlist */}
