@@ -27,6 +27,7 @@ export async function POST(request: Request) {
   const lastName = typeof body.lastName === 'string' ? body.lastName.trim() : '';
   const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
   const growthJourney = typeof body.growthJourney === 'string' ? body.growthJourney.trim() : '';
+  const lifeSeasons = Array.isArray(body.lifeSeasons) ? body.lifeSeasons.filter((s): s is string => typeof s === 'string') : [];
   const referralSource = typeof body.referralSource === 'string' ? body.referralSource : '';
   const referralSourceOther =
     typeof body.referralSourceOther === 'string' ? body.referralSourceOther.trim() : '';
@@ -50,6 +51,7 @@ export async function POST(request: Request) {
     last_name: lastName,
     email,
     growth_journey: growthJourney || null,
+    life_seasons: lifeSeasons.length > 0 ? lifeSeasons : null,
     referral_source: referralSource || null,
     referral_source_other: referralSourceOther || null,
   });
