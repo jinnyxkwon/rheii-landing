@@ -25,12 +25,30 @@ export default function WaitlistForm() {
     lastName: '',
     email: '',
     growthJourney: '',
+    lifeSeasons: [] as string[],
     referralSource: '',
     referralSourceOther: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const lifeSeasonOptions = [
+    { value: 'building', label: 'Building something new in career or relationships' },
+    { value: 'exploring', label: 'Exploring or figuring out what I want' },
+    { value: 'recovering', label: 'Recovering from burnout, loss, or a hard chapter' },
+    { value: 'transition', label: 'In transition' },
+    { value: 'grounded', label: 'Grounded — things are stable right now / Other' },
+  ];
+
+  const toggleLifeSeason = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      lifeSeasons: prev.lifeSeasons.includes(value)
+        ? prev.lifeSeasons.filter((s) => s !== value)
+        : [...prev.lifeSeasons, value],
+    }));
+  };
 
   const referralOptions = [
     { value: 'instagram', label: 'Instagram' },
@@ -135,7 +153,7 @@ export default function WaitlistForm() {
             fontVariationSettings: "'GRAD' 0, 'wdth' 100",
           }}
         >
-          Join the Waitlist for our Beta intake
+          Join the Waitlist
         </h1>
         <p
           className="font-body text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-[#262626]"
@@ -143,9 +161,9 @@ export default function WaitlistForm() {
             fontVariationSettings: "'opsz' 14",
           }}
         >
-          Rheii is invite-only.
+          Join other members who are navigating life from the inside out.
           <br />
-          Beta users will have first access and define the next wave of members.
+          We're invite-only for now, but we'll be going to public very soon!
         </p>
       </div>
 
@@ -254,12 +272,43 @@ export default function WaitlistForm() {
             id="growthJourney"
             value={formData.growthJourney}
             onChange={(e) => setFormData({ ...formData, growthJourney: e.target.value })}
-            rows={4}
+            rows={2}
             className="px-[16px] py-[8px] border border-[#d9d9d9] rounded-[4px] font-body text-[15px] sm:text-[16px] leading-[24px] text-rheti-neutral-600 focus:outline-none focus:border-rheti-primary-500 resize-none"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
           />
+        </div>
+
+        {/* Life Season Checkboxes */}
+        <div className="flex flex-col gap-[8px]">
+          <label
+            className="font-body font-semibold text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-rheti-neutral-600"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            What season of life are you in right now?
+          </label>
+          <div className="flex flex-col gap-[12px] mt-[4px]">
+            {lifeSeasonOptions.map((option) => (
+              <label
+                key={option.value}
+                className="flex items-center gap-[12px] cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  checked={formData.lifeSeasons.includes(option.value)}
+                  onChange={() => toggleLifeSeason(option.value)}
+                  className="w-[18px] h-[18px] rounded-[4px] border border-[#d9d9d9] accent-rheti-primary-500 cursor-pointer flex-shrink-0"
+                />
+                <span
+                  className="font-body text-[14px] sm:text-[15px] leading-[22px] text-rheti-neutral-600"
+                  style={{ fontVariationSettings: "'opsz' 14" }}
+                >
+                  {option.label}
+                </span>
+              </label>
+            ))}
+          </div>
         </div>
 
         {/* Referral Source Dropdown */}
