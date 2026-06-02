@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   title: 'Rheii - Growth made Visible',
   description: 'Turn your thoughts into insights that actually serve you',
   icons: {
-    icon: '/images/logo-icon.svg',
-    apple: '/images/logo-icon.svg',
+    icon: '/images/rheii-favicon.png',
+    apple: '/images/rheii-favicon.png',
   },
 };
 
