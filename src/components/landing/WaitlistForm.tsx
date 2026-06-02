@@ -107,8 +107,6 @@ export default function WaitlistForm() {
               }}
             >
               Thank you for joining the waitlist. We'll send you an email when Rheii launches.
-              <br />
-              Get ready for your journey to begin.
             </p>
           </div>
 
