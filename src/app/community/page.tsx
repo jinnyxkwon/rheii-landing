@@ -20,11 +20,11 @@ export default function CommunityPage() {
       {/* Navigation */}
       <Navigation />
 
-      {/* Community Section */}
-      <CommunitySection />
-
       {/* Events Section */}
       <EventsSection />
+
+      {/* Community Section */}
+      <CommunitySection />
 
       {/* Footer */}
       <LandingFooter />
