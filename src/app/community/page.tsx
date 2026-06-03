@@ -11,6 +11,7 @@
 
 import Navigation from '@/components/landing/Navigation';
 import CommunitySection from '@/components/community/CommunitySection';
+import EventsSection from '@/components/community/EventsSection';
 import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function CommunityPage() {
@@ -21,6 +22,9 @@ export default function CommunityPage() {
 
       {/* Community Section */}
       <CommunitySection />
+
+      {/* Events Section */}
+      <EventsSection />
 
       {/* Footer */}
       <LandingFooter />
