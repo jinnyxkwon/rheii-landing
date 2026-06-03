@@ -60,24 +60,24 @@ export default function CommunitySection() {
       {/* Desktop Decorative Photos — original scattered layout */}
       <div className="hidden md:block absolute inset-0 pointer-events-none">
         {/* Top left photo */}
-        <div className="absolute left-[105px] top-[294px] w-[190px] h-[190px]">
-          <Image src="/images/community/dsc01267.jpg" alt="" fill className="object-cover rounded-lg" />
+        <div className="absolute left-[105px] top-[294px]">
+          <Image src="/images/community/dsc01267.jpg" alt="" width={190} height={190} className="object-cover rounded-lg w-[190px] h-[190px]" />
         </div>
         {/* Left middle photo */}
-        <div className="absolute left-[181px] top-[641px] w-[186px] h-[186px]">
-          <Image src="/images/community/dsc01429.jpg" alt="" fill className="object-cover rounded-lg" />
+        <div className="absolute left-[181px] top-[641px]">
+          <Image src="/images/community/dsc01429.jpg" alt="" width={186} height={186} className="object-cover rounded-lg w-[186px] h-[186px]" />
         </div>
         {/* Bottom right photo */}
-        <div className="absolute right-[584px] top-[822px] w-[160px] h-[160px]">
-          <Image src="/images/community/dsc01496.jpg" alt="" fill className="object-cover rounded-lg" />
+        <div className="absolute right-[584px] top-[822px]">
+          <Image src="/images/community/dsc01496.jpg" alt="" width={160} height={160} className="object-cover rounded-lg w-[160px] h-[160px]" />
         </div>
         {/* Top right photo */}
-        <div className="absolute right-[124px] top-[199px] w-[190px] h-[190px]">
-          <Image src="/images/community/dsc01494.jpg" alt="" fill className="object-cover rounded-lg" />
+        <div className="absolute right-[124px] top-[199px]">
+          <Image src="/images/community/dsc01494.jpg" alt="" width={190} height={190} className="object-cover rounded-lg w-[190px] h-[190px]" />
         </div>
         {/* Bottom right corner photo */}
-        <div className="absolute right-[104px] top-[597px] w-[186px] h-[186px]">
-          <Image src="/images/community/dsc01620.jpg" alt="" fill className="object-cover rounded-lg" />
+        <div className="absolute right-[104px] top-[597px]">
+          <Image src="/images/community/dsc01620.jpg" alt="" width={186} height={186} className="object-cover rounded-lg w-[186px] h-[186px]" />
         </div>
       </div>
 
@@ -110,15 +110,6 @@ export default function CommunitySection() {
           </p>
         </div>
 
-        {/* Coming Soon */}
-        <p
-          className="font-body font-normal text-[20px] leading-[30px] text-rheti-neutral-600 text-center mt-[80px]"
-          style={{
-            fontVariationSettings: "'opsz' 14",
-          }}
-        >
-          Coming Soon.
-        </p>
       </div>
     </div>
   );
