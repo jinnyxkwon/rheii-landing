@@ -163,7 +163,7 @@ export default function WaitlistForm() {
         >
           Join other members who are navigating life from the inside out.
           <br />
-          We're hosting our first IRL <a href="https://luma.com/0fbz8pjx" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">here</a>. RSVP to get access to our beta and beat the waitlist.
+          We'll be hosting more <a href="https://www.rheii.com/community" className="underline hover:opacity-70 transition-opacity">IRL events</a>. RSVP to get access to our beta and beat the waitlist.
         </p>
       </div>
 
