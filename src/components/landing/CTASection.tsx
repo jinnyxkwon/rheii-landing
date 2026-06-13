@@ -47,24 +47,18 @@ export default function CTASection() {
             Join a community of people who are ready to close that gap between where they are and where they want to be.
           </p>
 
-          {/* Join Button */}
+          {/* App Store Button */}
           <a
-            href="/waitlist"
-            className="overflow-hidden rounded-none min-h-[50px] mt-4"
+            href="https://apps.apple.com/app/id6769975352"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block"
           >
-            <div className="flex flex-col items-center justify-center min-w-[180px] rounded-none">
-              <div
-                className="border border-black flex items-center justify-center px-[32px] py-[14px] rounded-none min-h-[50px]"
-                style={{ backgroundColor: '#5C3D3D' }}
-              >
-                <span
-                  className="font-body font-normal text-[14px] leading-[20px] text-white"
-                  style={{ fontVariationSettings: "'opsz' 14" }}
-                >
-                  Join Here
-                </span>
-              </div>
-            </div>
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="Download on the App Store"
+              className="h-[50px] w-auto"
+            />
           </a>
         </motion.div>
 

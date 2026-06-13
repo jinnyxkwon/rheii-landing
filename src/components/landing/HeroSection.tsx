@@ -94,19 +94,16 @@ export default function HeroSection() {
                 Join other early members who are learning to navigate life from the inside out.
               </p>
               <a
-                href="/waitlist"
-                className="overflow-hidden rounded-full min-h-[44px] mt-[24px]"
+                href="https://apps.apple.com/app/id6769975352"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-[24px] inline-block"
               >
-                <div className="flex flex-col items-center justify-center min-w-[160px] rounded-full">
-                  <div className="bg-black border border-black flex items-center justify-center px-[20px] py-[10px] rounded-full min-h-[44px]">
-                    <span
-                      className="font-body font-semibold text-[14px] leading-[20px] text-white"
-                      style={{ fontVariationSettings: "'opsz' 14" }}
-                    >
-                      Join The Waitlist
-                    </span>
-                  </div>
-                </div>
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="Download on the App Store"
+                  className="h-[44px] w-auto"
+                />
               </a>
             </motion.div>
           </div>
