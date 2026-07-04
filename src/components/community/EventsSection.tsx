@@ -23,19 +23,11 @@ export default function EventsSection() {
 
       {/* Heading */}
       <h2
-        className="font-heading font-light text-[32px] sm:text-[40px] leading-[44px] sm:leading-[56px] tracking-[-0.8px] text-rheti-neutral-600 text-center mb-[12px]"
+        className="font-heading font-light text-[32px] sm:text-[40px] leading-[44px] sm:leading-[56px] tracking-[-0.8px] text-rheti-neutral-600 text-center mb-[48px] sm:mb-[64px]"
         style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
       >
-        Join us IRL this June
+        Join us IRL this July
       </h2>
-
-      {/* Subtext */}
-      <p
-        className="font-body text-[15px] sm:text-[16px] leading-[24px] text-rheti-neutral-400 text-center max-w-[520px] mx-auto mb-[48px] sm:mb-[64px]"
-        style={{ fontVariationSettings: "'opsz' 14" }}
-      >
-        Two events, one month — come as you are.
-      </p>
 
       {/* Event image */}
       <div className="relative w-full max-w-[1080px] mx-auto rounded-[16px] overflow-hidden shadow-md aspect-[16/7]">
