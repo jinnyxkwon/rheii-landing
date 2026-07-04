@@ -44,25 +44,25 @@ export default function EventsSection() {
         {/* Event description */}
         <div className="flex flex-col gap-[16px] pt-[8px] max-w-[520px]">
           <h3
-            className="font-heading font-medium text-[22px] sm:text-[26px] leading-[30px] sm:leading-[34px] tracking-[-0.4px] text-rheti-neutral-600"
+            className="font-heading font-medium text-[26px] sm:text-[30px] leading-[34px] sm:leading-[38px] tracking-[-0.4px] text-rheti-neutral-600"
             style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
           >
             Part 2: Grounded in Motion
           </h3>
           <p
-            className="font-body text-[14px] sm:text-[15px] leading-[22px] text-rheti-neutral-400"
+            className="font-body text-[16px] sm:text-[17px] leading-[26px] text-rheti-neutral-400"
             style={{ fontVariationSettings: "'opsz' 14" }}
           >
             We often think of grounding as standing completely still. But life rarely stops moving, and neither do we.
           </p>
           <p
-            className="font-body text-[14px] sm:text-[15px] leading-[22px] text-rheti-neutral-400"
+            className="font-body text-[16px] sm:text-[17px] leading-[26px] text-rheti-neutral-400"
             style={{ fontVariationSettings: "'opsz' 14" }}
           >
             Whether you're navigating a change, managing stress, or seeking peace amidst the daily noise of your own expectations, the real challenge isn't finding a static calm - it's learning how to stay anchored while you're in motion.
           </p>
           <p
-            className="font-body text-[14px] sm:text-[15px] leading-[22px] text-rheti-neutral-400"
+            className="font-body text-[16px] sm:text-[17px] leading-[26px] text-rheti-neutral-400"
             style={{ fontVariationSettings: "'opsz' 14" }}
           >
             Rheii was built to help you capture this fluidity. Our most important thoughts don't happen in a vacuum; they repeat, evolve, and shape how we move forward.
@@ -71,7 +71,7 @@ export default function EventsSection() {
             href="https://luma.com/jddf8ppm"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-[8px] inline-flex items-center gap-[6px] font-body font-semibold text-[14px] text-rheti-primary-500 hover:opacity-70 transition-opacity"
+            className="mt-[8px] inline-flex items-center gap-[6px] font-body font-semibold text-[16px] text-rheti-primary-500 hover:opacity-70 transition-opacity"
             style={{ fontVariationSettings: "'opsz' 14" }}
           >
             Join Us →
