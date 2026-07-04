@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 export default function EventsSection() {
   return (
-    <section className="w-full bg-[#fffdfa] py-[80px] md:py-[120px] px-5 sm:px-8 md:px-[104px]">
+    <section className="w-full bg-[#fffdfa] pt-[80px] pb-[24px] md:pt-[120px] md:pb-[40px] px-5 sm:px-8 md:px-[104px]">
       {/* Section label */}
       <p
         className="font-body text-[13px] uppercase tracking-[2px] text-rheti-primary-500 text-center mb-[16px]"
@@ -42,8 +42,40 @@ export default function EventsSection() {
         </div>
 
         {/* Event description */}
-        <div className="flex flex-col gap-[8px] pt-[8px]">
-          {/* TODO: add event description copy here */}
+        <div className="flex flex-col gap-[16px] pt-[8px] max-w-[520px]">
+          <h3
+            className="font-heading font-medium text-[22px] sm:text-[26px] leading-[30px] sm:leading-[34px] tracking-[-0.4px] text-rheti-neutral-600"
+            style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
+          >
+            Part 2: Grounded in Motion
+          </h3>
+          <p
+            className="font-body text-[14px] sm:text-[15px] leading-[22px] text-rheti-neutral-400"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            We often think of grounding as standing completely still. But life rarely stops moving, and neither do we.
+          </p>
+          <p
+            className="font-body text-[14px] sm:text-[15px] leading-[22px] text-rheti-neutral-400"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            Whether you're navigating a change, managing stress, or seeking peace amidst the daily noise of your own expectations, the real challenge isn't finding a static calm - it's learning how to stay anchored while you're in motion.
+          </p>
+          <p
+            className="font-body text-[14px] sm:text-[15px] leading-[22px] text-rheti-neutral-400"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            Rheii was built to help you capture this fluidity. Our most important thoughts don't happen in a vacuum; they repeat, evolve, and shape how we move forward.
+          </p>
+          <a
+            href="https://luma.com/jddf8ppm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-[8px] inline-flex items-center gap-[6px] font-body font-semibold text-[14px] text-rheti-primary-500 hover:opacity-70 transition-opacity"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            Join Us →
+          </a>
         </div>
       </div>
     </section>
