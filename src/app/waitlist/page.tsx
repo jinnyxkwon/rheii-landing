@@ -16,7 +16,7 @@ import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function WaitlistPage() {
   return (
-    <main className="min-h-screen bg-[#fffdfa] flex flex-col relative">
+    <main className="min-h-screen bg-parchment flex flex-col relative">
       {/* Background Image */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none opacity-40"

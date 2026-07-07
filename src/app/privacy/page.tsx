@@ -16,44 +16,25 @@ import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#edebe9]">
+    <main className="min-h-screen bg-parchment">
       {/* Navigation */}
       <Navigation />
 
       {/* Content */}
-      <div className="max-w-[604px] mx-auto px-4 pt-[160px] pb-[80px]">
+      <div className="max-w-[640px] mx-auto px-5 sm:px-4 pt-[160px] pb-[80px]">
         {/* Header */}
-        <div className="flex flex-col gap-[8px] mb-[48px]">
-          <h1
-            className="font-heading font-medium text-[30px] leading-[40px] tracking-[-0.9px] text-rheti-neutral-600"
-            style={{
-              fontVariationSettings: "'GRAD' 0, 'wdth' 100",
-            }}
-          >
+        <div className="flex flex-col gap-[10px] mb-[48px] pb-[32px] border-b border-stone">
+          <p className="eyebrow">Legal</p>
+          <h1 className="font-serif font-medium text-[36px] leading-[1.1] tracking-heading text-ink">
             Privacy Policy
           </h1>
-          <p
-            className="font-body text-[18px] leading-[27px] text-[#322d29]"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
-          >
-            Rheii Pte. Ltd.
-          </p>
-          <p
-            className="font-body text-[18px] leading-[27px] text-[#322d29]"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
-          >
-            Last Updated: December 2025
-          </p>
+          <p className="mono-tag mt-[8px]">Rheii Pte. Ltd. · Last updated December 2025</p>
         </div>
 
         {/* We honor your privacy */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -90,7 +71,7 @@ export default function PrivacyPolicyPage() {
         {/* Privacy Policy Section */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -121,7 +102,7 @@ export default function PrivacyPolicyPage() {
         {/* Information we collect */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -255,7 +236,7 @@ export default function PrivacyPolicyPage() {
         {/* How we use and disclose information */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -321,7 +302,7 @@ export default function PrivacyPolicyPage() {
         {/* Data Security */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -356,7 +337,7 @@ export default function PrivacyPolicyPage() {
         {/* Underage & Minor Users */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -382,7 +363,7 @@ export default function PrivacyPolicyPage() {
         {/* Direct Marketing */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -406,7 +387,7 @@ export default function PrivacyPolicyPage() {
         {/* Retention of Personal Information */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -429,7 +410,7 @@ export default function PrivacyPolicyPage() {
         {/* Questions */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}

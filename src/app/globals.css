@@ -1,15 +1,9 @@
 /**
- * Global Styles
+ * Global Styles — Rheii editorial design system
  *
- * Contains Tailwind directives and CSS custom properties
- * for the design system defined in UI_UX_FLOW.md
- *
- * Design System Colors:
- * - Primary Background: #F5F5F5
- * - Secondary Background: #FFFFFF
- * - Text Primary: #000000
- * - Text Secondary: #666666
- * - Button Primary: #000000
+ * "Warm parchment, printed in ink." Adapted from the Cursor style reference,
+ * remapped to the Rheii palette. Flat paper surfaces, hairline borders, and a
+ * single terracotta accent reserved for links and emphasis.
  */
 
 @tailwind base;
@@ -17,20 +11,41 @@
 @tailwind utilities;
 
 :root {
-  /* Colors from Figma - Exact specifications */
-  --background-primary: #f6f6f6;
-  --background-secondary: #ffffff;
-  --text-primary: #121212;
-  --text-secondary: #666666;
-  --button-primary-bg: #121212;
-  --button-primary-text: #ffffff;
-  --tag-background: #f0f0f0;
-  --border-color: #e0e0e0;
-  --modal-overlay: rgba(0, 0, 0, 0.4);
+  /* ── Surfaces ──────────────────────────────────────────── */
+  --parchment: #fafaf8; /* page canvas — light warm-white */
+  --bone: #f3f2ef; /* faint secondary tint */
+  --linen: #edece7; /* elevated surface */
+  --stone: #e6e4de; /* hairline borders */
 
-  /* Font Variables - Cormorant Garamond */
-  --font-heading: var(--font-cormorant-garamond), serif;
-  --font-body: var(--font-cormorant-garamond), serif;
+  /* ── Text ──────────────────────────────────────────────── */
+  --mist: #a3a099;
+  --ash: #6f6b62;
+  --ink: #242424;
+
+  /* ── Accents (text-only punctuation) ───────────────────── */
+  --terracotta: #ad7441;
+  --terracotta-600: #8f5d31;
+  --clay: #73383e;
+  --sage: #6d867c;
+
+  /* Hairline border helper */
+  --hairline: color-mix(in oklab, var(--ink) 8%, transparent);
+
+  /* Fonts */
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-serif: var(--font-cormorant-garamond), Georgia, serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, monospace;
+
+  /* Legacy variables */
+  --background-primary: var(--parchment);
+  --background-secondary: var(--bone);
+  --text-primary: var(--ink);
+  --text-secondary: var(--ash);
+  --button-primary-bg: var(--ink);
+  --button-primary-text: var(--parchment);
+  --border-color: var(--stone);
+  --font-heading: var(--font-serif);
+  --font-body: var(--font-sans);
 }
 
 html,
@@ -38,66 +53,128 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #f4f3f0;
+  background: var(--parchment);
 }
 
-/* Next.js root wrapper (Pages Router) */
-#__next {
-  min-height: 100%;
-  background: #f4f3f0;
-}
-
-/* Next.js App Router root wrapper (best-effort) */
+#__next,
 body > div:first-child {
   min-height: 100%;
-  background: #f4f3f0;
+  background: var(--parchment);
 }
 
 body {
-  background: #f4f3f0;
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-weight: 300;
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
+/* Serif-led headlines — Cormorant Garamond carries the display voice, weight
+   500 with gentle tracking. The editorial serif is the identity; DM Sans is
+   reserved for labels, navigation, buttons, and metadata. */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
-  font-weight: 300;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
 
-/* Custom utility classes for design system */
+/* Warm burgundy text selection instead of Cursor's cool blue */
+::selection {
+  background: color-mix(in oklab, var(--clay) 20%, transparent);
+  color: var(--ink);
+}
+
 @layer utilities {
   .text-heading {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
   }
-
   .text-body {
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
   }
 
-  /* Main content area - prevent overflow on mobile, cap width on desktop */
+  /* Editorial serif — for pull-quotes, testimonials, select emphasis */
+  .font-editorial {
+    font-family: var(--font-serif);
+  }
+
+  /* Eyebrow / section label — mono, tracked out, uppercase */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ash);
+  }
+
+  /* Metadata tag — mono, inline with prose */
+  .mono-tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--ash);
+  }
+
+  /* Hairline border helper */
+  .border-hairline {
+    border: 1px solid var(--hairline);
+  }
+
+  /* Inline accent link — burgundy, underline on hover only */
+  .link-accent {
+    color: var(--clay);
+    text-decoration: none;
+    transition: color 150ms cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  }
+  .link-accent:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Display tracking — gentle for Cormorant; the serif crowds under the tight
+     negative tracking a geometric sans wants. */
+  .tracking-display {
+    letter-spacing: -0.018em;
+  }
+  .tracking-heading {
+    letter-spacing: -0.012em;
+  }
+
+  /* Main content area — cap width, prevent mobile overflow */
   .content-area {
-    max-width: 1360px;
+    max-width: 1300px;
     width: 100%;
     min-width: 0;
     overflow-x: clip;
     margin-left: auto;
     margin-right: auto;
   }
-
-  /* Hide scrollbar while maintaining scroll functionality */
-  .scrollbar-hide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+  .section-x {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @media (min-width: 768px) {
+    .section-x {
+      padding-left: 104px;
+      padding-right: 104px;
+    }
   }
 
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
   .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
   }
 }
 
@@ -106,26 +183,13 @@ section {
   margin: 0;
   padding: 0;
 }
-
 main > section,
 main > div > section {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* Animation for insight ready state */
-@keyframes pulse-subtle {
-  0%,
-  100% {
-    transform: scale(1);
-    box-shadow: 0 10px 25px -5px rgba(74, 30, 42, 0.25);
-  }
-  50% {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px -5px rgba(74, 30, 42, 0.35);
-  }
-}
-
+/* ── Motion ──────────────────────────────────────────────── */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -137,24 +201,32 @@ main > div > section {
   }
 }
 
-.animate-pulse-subtle {
-  animation: pulse-subtle 2s ease-in-out infinite;
-}
-
 .animate-fade-in {
   animation: fade-in 0.3s ease-out forwards;
 }
 
-@keyframes nav-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 8px 2px rgba(115, 56, 62, 0.3);
+/* Seamless horizontal photo marquee (community gallery) */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
   }
-  50% {
-    box-shadow: 0 0 20px 8px rgba(115, 56, 62, 0.5);
+  to {
+    transform: translateX(-50%);
   }
 }
+.marquee-track {
+  animation-name: marquee-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
-.animate-nav-glow {
-  animation: nav-glow 1.5s ease-in-out infinite;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

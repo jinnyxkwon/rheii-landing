@@ -1,41 +1,46 @@
 /**
- * Navigation Component
+ * Navigation — full-width bar
  *
- * Main navigation bar for the landing page featuring:
- * - Star logo on the left
- * - Navigation links in center (Home, About, Community)
- * - Join Waitlist button on the right
- * - Glass morphism effect with backdrop blur
- *
- * Design: Extracted from Figma (node-id: 159-781)
- * Colors: Glass effect with rgba(255,255,255,0.4) and border
- * Typography: Inter Medium (16px) for nav links, DM Sans Semibold for button
+ * Flat, full-width header: transparent at the top of the page, settling to a
+ * translucent parchment surface with a single hairline bottom rule once
+ * scrolled. Wordmark left, links centered, burgundy Download button right.
  */
 
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+
+const APP_STORE_URL = 'https://apps.apple.com/app/id6769975352';
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/community', label: 'Community' },
+];
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 h-auto md:h-[80px] flex items-center justify-between px-4 sm:px-6 md:px-[60px] lg:px-[104px] py-2 md:py-0 border-b border-rheti-secondary-100"
-      style={{
-        backdropFilter: 'blur(82.5px)',
-        backgroundColor: 'rgba(255, 255, 255, 0.4)',
-      }}
+      className={`fixed top-0 left-0 right-0 z-50 h-[68px] flex items-center border-b transition-colors duration-150 ${
+        scrolled ? 'border-stone bg-parchment/85 backdrop-blur-md' : 'border-transparent bg-parchment/0'
+      }`}
+      style={{ transitionTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1.1)' }}
     >
-      {/* Layout Container */}
-      <div className="flex flex-row items-center justify-between w-full gap-2">
-        {/* Logo */}
-        <a
-          href="/"
-          className="flex items-center justify-start w-auto gap-[8px] cursor-pointer min-h-[36px] flex-shrink-0"
-        >
-          <div className="relative h-[28px] sm:h-[32px] w-[80px] sm:w-[92px]">
+      <div className="relative w-full flex items-center justify-between px-5 sm:px-8 md:px-[104px]">
+        {/* Wordmark */}
+        <a href="/" className="flex items-center flex-shrink-0" aria-label="Rheii home">
+          <div className="relative h-[26px] w-[80px] sm:h-[28px] sm:w-[88px]">
             <Image
               src="/images/landing/rheii-logo.png"
               alt="Rheii"
@@ -46,69 +51,62 @@ export default function Navigation() {
           </div>
         </a>
 
-        {/* Navigation Items + Waitlist */}
-        <div className="hidden md:flex flex-nowrap items-center justify-end gap-2 sm:gap-3 md:gap-[24px] w-full">
-          <a
-            href="/"
-            className="flex items-center gap-1 h-auto md:h-[80px] min-h-[32px] px-1 sm:px-2 cursor-pointer"
-          >
-            <p className="font-inter font-medium text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-rheti-neutral-600">
-              Home
-            </p>
-          </a>
-
-          <a
-            href="/about"
-            className="flex items-center gap-1 h-auto md:h-[80px] min-h-[32px] px-1 sm:px-2 cursor-pointer"
-          >
-            <p className="font-inter font-medium text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-rheti-neutral-600">
-              About
-            </p>
-          </a>
-
-          <a
-            href="/community"
-            className="flex items-center gap-1 h-auto md:h-[80px] min-h-[32px] px-1 sm:px-2 cursor-pointer"
-          >
-            <p className="font-inter font-medium text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-rheti-neutral-600">
-              Community
-            </p>
-          </a>
+        {/* Links — centered */}
+        <div className="hidden md:flex items-center gap-[32px] absolute left-1/2 -translate-x-1/2">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="font-sans text-[14px] leading-[20px] text-ink/70 hover:text-ink transition-colors duration-150"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
-        <div className="relative md:hidden flex items-center gap-2">
+        {/* CTA */}
+        <a
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex items-center font-sans text-[14px] leading-[20px] text-parchment bg-clay rounded-full px-[18px] py-[9px] hover:bg-[#5f2d33] transition-colors duration-150"
+        >
+          Download
+        </a>
+
+        {/* Mobile menu button */}
+        <div className="relative md:hidden flex items-center">
           <button
             type="button"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="flex items-center justify-center w-[36px] h-[36px] rounded-full border border-rheti-secondary-100 bg-white/80"
+            className="flex items-center justify-center w-[40px] h-[40px] rounded-full border border-stone bg-bone"
           >
-            <span className="block w-[16px] h-[2px] bg-[#3a312b] relative">
-              <span className="absolute -top-[5px] left-0 w-[16px] h-[2px] bg-[#3a312b]" />
-              <span className="absolute top-[5px] left-0 w-[16px] h-[2px] bg-[#3a312b]" />
+            <span className="block w-[16px] h-[1.5px] bg-ink relative">
+              <span className="absolute -top-[5px] left-0 w-[16px] h-[1.5px] bg-ink" />
+              <span className="absolute top-[5px] left-0 w-[16px] h-[1.5px] bg-ink" />
             </span>
           </button>
 
           {isMenuOpen && (
-            <div className="absolute right-0 top-[44px] w-[180px] rounded-[12px] border border-rheti-secondary-100 bg-white/95 backdrop-blur-md shadow-[0_12px_24px_rgba(0,0,0,0.12)] overflow-hidden">
+            <div className="absolute right-0 top-[50px] w-[190px] rounded-[12px] border border-stone bg-parchment overflow-hidden">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block px-4 py-3 font-sans text-[14px] leading-[20px] text-ink/80 hover:bg-bone transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
               <a
-                href="/"
-                className="block px-4 py-3 text-[14px] leading-[20px] text-rheti-neutral-600 hover:bg-white"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-3 font-sans text-[14px] leading-[20px] text-clay hover:bg-bone transition-colors border-t border-stone"
               >
-                Home
-              </a>
-              <a
-                href="/about"
-                className="block px-4 py-3 text-[14px] leading-[20px] text-rheti-neutral-600 hover:bg-white"
-              >
-                About
-              </a>
-              <a
-                href="/community"
-                className="block px-4 py-3 text-[14px] leading-[20px] text-rheti-neutral-600 hover:bg-white"
-              >
-                Community
+                Download the app →
               </a>
             </div>
           )}

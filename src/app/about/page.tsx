@@ -17,7 +17,7 @@ import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-parchment">
       {/* Navigation */}
       <Navigation />
 

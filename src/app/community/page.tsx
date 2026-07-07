@@ -16,7 +16,7 @@ import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function CommunityPage() {
   return (
-    <main className="min-h-screen bg-[#fffdfa]">
+    <main className="min-h-screen bg-parchment">
       {/* Navigation */}
       <Navigation />
 
