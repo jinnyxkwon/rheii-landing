@@ -11,14 +11,15 @@
 
 import { motion } from 'framer-motion';
 import { fadeUp, staggerParent, inViewProps } from '@/lib/motion';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 import PhotoMarquee from '@/components/landing/PhotoMarquee';
 
 const rowA = [
-  { src: '/images/community/dsc01267.jpg', alt: 'Rheii community gathering' },
-  { src: '/images/community/dsc01494.jpg', alt: 'Rheii community gathering' },
-  { src: '/images/community/dsc01429.jpg', alt: 'Rheii community gathering' },
-  { src: '/images/community/dsc01620.jpg', alt: 'Rheii community gathering' },
-  { src: '/images/community/dsc01496.jpg', alt: 'Rheii community gathering' },
+  { src: WEBSITE_ASSETS.themeCards.relationships, alt: 'Rheii relationships insight' },
+  { src: WEBSITE_ASSETS.themeCards.validation, alt: 'Rheii self and identity insight' },
+  { src: WEBSITE_ASSETS.themeCards.burnout, alt: 'Rheii burnout trend insight' },
+  { src: WEBSITE_ASSETS.themeCards.selfIdentity, alt: 'Rheii self and identity reflection' },
+  { src: WEBSITE_ASSETS.themeCards.work, alt: 'Rheii work reflection' },
 ];
 
 const rowB = [...rowA].reverse();
@@ -32,9 +33,6 @@ export default function CommunitySection() {
         {...inViewProps}
         className="flex flex-col items-center max-w-[640px] mx-auto px-5 sm:px-8 mb-16 md:mb-20 text-center"
       >
-        <motion.p variants={fadeUp} className="eyebrow mb-[20px]">
-          The community
-        </motion.p>
         <motion.h1
           variants={fadeUp}
           className="font-serif font-medium text-[36px] sm:text-[46px] leading-[1.1] tracking-heading text-ink"

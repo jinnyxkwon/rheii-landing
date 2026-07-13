@@ -40,14 +40,14 @@ export default function PhotoMarquee({
         {track.map((photo, i) => (
           <div
             key={i}
-            className="relative h-[220px] w-[280px] sm:h-[260px] sm:w-[330px] shrink-0 overflow-hidden rounded-[16px] border border-stone mr-4 md:mr-5"
+            className="relative h-[220px] w-[340px] sm:h-[260px] sm:w-[440px] shrink-0 overflow-hidden rounded-[16px] border border-stone bg-bone mr-4 md:mr-5"
           >
             <Image
               src={photo.src}
               alt={photo.alt ?? ''}
               fill
-              className="object-cover"
-              sizes="330px"
+              className="object-contain p-3"
+              sizes="(max-width: 640px) 340px, 440px"
             />
           </div>
         ))}

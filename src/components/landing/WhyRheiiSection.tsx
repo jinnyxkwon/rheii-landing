@@ -10,14 +10,16 @@
 
 import { motion } from 'framer-motion';
 import { fadeUp, staggerParent, inViewProps } from '@/lib/motion';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 import PhotoMarquee from './PhotoMarquee';
 
-const communityPhotos = [
-  { src: '/images/community/dsc01267.jpg', alt: 'Rheii community gathering' },
-  { src: '/images/community/dsc01494.jpg', alt: 'Rheii community gathering' },
-  { src: '/images/community/dsc01429.jpg', alt: 'Rheii community gathering' },
-  { src: '/images/community/dsc01620.jpg', alt: 'Rheii community gathering' },
-  { src: '/images/community/dsc01496.jpg', alt: 'Rheii community gathering' },
+const communityFeedback = [
+  { src: WEBSITE_ASSETS.testimonials.firstEntry, alt: 'Member feedback after a first Rheii entry' },
+  { src: WEBSITE_ASSETS.testimonials.amazing, alt: 'Member describing Rheii as amazing' },
+  {
+    src: WEBSITE_ASSETS.testimonials.loopedThinking,
+    alt: 'Member feedback about working through looped thinking with Rheii',
+  },
 ];
 
 interface Quote {
@@ -46,7 +48,6 @@ export default function WhyRheiiSection() {
       {/* Header */}
       <div className="px-5 sm:px-8 md:px-[104px]">
         <motion.div {...inViewProps} variants={fadeUp} className="max-w-[640px]">
-          <p className="eyebrow mb-[20px]">From the community</p>
           <h2 className="font-serif font-medium text-[30px] sm:text-[38px] md:text-[46px] leading-[1.14] tracking-heading text-ink">
             Hear it from the people using it
           </h2>
@@ -55,7 +56,7 @@ export default function WhyRheiiSection() {
 
       {/* Community photo marquee — edge to edge */}
       <div className="my-12 md:my-16">
-        <PhotoMarquee photos={communityPhotos} speed={70} />
+        <PhotoMarquee photos={communityFeedback} speed={70} />
       </div>
 
       {/* Quotes — set directly on the page, divided by a hairline rule */}

@@ -135,10 +135,8 @@ export default function WaitlistForm() {
     <div className="w-full max-w-[560px] mx-auto">
       {/* Heading */}
       <div className="flex flex-col gap-[10px] items-center text-center mb-[28px] sm:mb-[36px]">
-        <p className="eyebrow">Early access</p>
         <h1 className="font-serif font-medium text-[26px] sm:text-[32px] leading-[1.15] tracking-heading text-ink">
-          Join the{' '}
-          <span className="font-editorial italic font-medium text-clay">waitlist</span>
+          Join the <span className="font-editorial italic font-medium text-clay">waitlist</span>
         </h1>
         <p className="font-sans text-[15px] sm:text-[16px] leading-[1.55] text-ash max-w-[440px]">
           Join other members who are navigating life from the inside out. We&apos;ll be hosting more{' '}
@@ -258,10 +256,7 @@ export default function WaitlistForm() {
           </label>
           <div className="flex flex-col gap-[12px] mt-[4px]">
             {lifeSeasonOptions.map((option) => (
-              <label
-                key={option.value}
-                className="flex items-center gap-[12px] cursor-pointer"
-              >
+              <label key={option.value} className="flex items-center gap-[12px] cursor-pointer">
                 <input
                   type="checkbox"
                   checked={formData.lifeSeasons.includes(option.value)}
@@ -269,7 +264,6 @@ export default function WaitlistForm() {
                   className="w-[18px] h-[18px] rounded border border-stone accent-clay cursor-pointer flex-shrink-0"
                 />
                 <span className="font-sans text-[14px] sm:text-[15px] leading-[1.4] text-ink/90">
-
                   {option.label}
                 </span>
               </label>

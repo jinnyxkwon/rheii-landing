@@ -2,6 +2,7 @@
 
 import React, { useRef, RefObject } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 
 type OrderName = 'leaf' | 'ocean' | 'woman';
 
@@ -24,9 +25,9 @@ export default function ScrollHero({ targetRef, order = ['leaf', 'ocean', 'woman
   const woman = useTransform(scrollYProgress, [0.55, 0.75, 1], [0, 1, 1]);
 
   const mapSrc: Record<OrderName, string> = {
-    leaf: '/images/landing/1.png',
-    ocean: '/images/landing/2.png',
-    woman: '/images/landing/3.png',
+    leaf: WEBSITE_ASSETS.themeCards.relationships,
+    ocean: WEBSITE_ASSETS.themeCards.work,
+    woman: WEBSITE_ASSETS.founderPortrait,
   };
 
   const opMap: Record<OrderName, any> = {

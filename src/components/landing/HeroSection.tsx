@@ -3,9 +3,9 @@
  *
  * Left-aligned display headline (DM Sans, weight 400, tight tracking) with a
  * serif-italic clay accent word — the one place the editorial serif and
- * the accent color meet. Mono eyebrow above, App Store badge as the primary CTA,
- * and the product render presented on a flat "paper stage" with a hairline
- * border and warm elevation.
+ * the accent color meet. The App Store badge is the primary CTA, and the
+ * product render is presented on a flat "paper stage" with a hairline border
+ * and warm elevation.
  */
 
 'use client';
@@ -13,6 +13,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { fadeUp, staggerParent, EASE_EDITORIAL } from '@/lib/motion';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 
 const APP_STORE_URL = 'https://apps.apple.com/app/id6769975352';
 
@@ -34,16 +35,15 @@ export default function HeroSection() {
             >
               Your growth,
               <br />
-              made{' '}
-              <span className="italic text-clay">visible.</span>
+              made <span className="italic text-clay">visible.</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               className="mt-[24px] font-editorial text-[20px] sm:text-[22px] leading-[1.5] text-ash max-w-[460px]"
             >
-              Join early members learning to navigate life from the inside out — with a
-              journal that reflects your patterns back to you over time.
+              Join early members learning to navigate life from the inside out — with a journal that
+              reflects your patterns back to you over time.
             </motion.p>
 
             <motion.div
@@ -62,10 +62,7 @@ export default function HeroSection() {
                   className="h-[46px] w-auto"
                 />
               </a>
-              <a
-                href="/community"
-                className="link-accent font-sans text-[15px] leading-[20px]"
-              >
+              <a href="/community" className="link-accent font-sans text-[15px] leading-[20px]">
                 See the community →
               </a>
             </motion.div>
@@ -79,11 +76,11 @@ export default function HeroSection() {
             className="relative flex items-center justify-center lg:justify-end"
           >
             <Image
-              src="/images/home/hero page image.png"
-              alt="Rheii app interface"
-              width={1408}
-              height={1174}
-              className="relative object-contain h-auto w-full max-w-[520px]"
+              src={WEBSITE_ASSETS.product.recurringThemes}
+              alt="Recurring themes in the Rheii app"
+              width={1206}
+              height={1745}
+              className="relative object-contain h-auto w-full max-w-[520px] max-h-[680px]"
               priority
             />
           </motion.div>

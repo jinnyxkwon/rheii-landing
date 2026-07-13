@@ -11,21 +11,25 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { fadeUp, staggerParent, inViewProps } from '@/lib/motion';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 
 const cards = [
   {
-    image: '/images/home/Recurring themes.png',
+    image: WEBSITE_ASSETS.product.recurringThemes,
+    imageClassName: 'object-cover object-top',
     title: 'Recurring Themes',
     description: "See the themes you keep returning to, and what they're telling you.",
   },
   {
-    image: '/images/home/Life in Motion.png',
+    image: WEBSITE_ASSETS.product.lifeInMotion,
+    imageClassName: 'object-contain p-3',
     title: 'Your Life in Motion',
     description:
       'As you navigate through life, see where things are growing, easing, or demanding your attention.',
   },
   {
-    image: '/images/home/Support Cards.png',
+    image: WEBSITE_ASSETS.themeCards.selfIdentity,
+    imageClassName: 'object-contain p-3',
     title: 'Support System',
     description:
       'Receive personalized suggestions and set intentions that resonate. Start building the habits that actually stick.',
@@ -38,7 +42,6 @@ export default function ThisIsRheiiSection() {
       <div className="relative z-10 px-5 sm:px-8 md:px-[104px] py-16 sm:py-20 md:py-28">
         {/* Header */}
         <div className="max-w-[640px] mb-14 md:mb-20">
-          <p className="eyebrow mb-[20px]">How it works</p>
           <motion.h2
             {...inViewProps}
             variants={fadeUp}
@@ -57,8 +60,8 @@ export default function ThisIsRheiiSection() {
         >
           {cards.map((card, index) => (
             <motion.div key={card.title} variants={fadeUp} className="flex flex-col">
-              <div className="relative w-full aspect-square mb-6 rounded-[12px] overflow-hidden">
-                <Image src={card.image} alt={card.title} fill className="object-cover" />
+              <div className="relative w-full aspect-[4/3] mb-6 rounded-[12px] overflow-hidden bg-bone">
+                <Image src={card.image} alt={card.title} fill className={card.imageClassName} />
               </div>
 
               <p className="mono-tag mb-[10px]">{String(index + 1).padStart(2, '0')}</p>

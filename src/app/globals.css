@@ -106,16 +106,6 @@ h6 {
     font-family: var(--font-serif);
   }
 
-  /* Eyebrow / section label — mono, tracked out, uppercase */
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    line-height: 1;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ash);
-  }
-
   /* Metadata tag — mono, inline with prose */
   .mono-tag {
     font-family: var(--font-mono);

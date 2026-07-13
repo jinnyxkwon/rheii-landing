@@ -24,7 +24,6 @@ export default function TermsOfUsePage() {
       <div className="max-w-[640px] mx-auto px-5 sm:px-4 pt-[160px] pb-[80px]">
         {/* Header */}
         <div className="flex flex-col gap-[10px] mb-[48px] pb-[32px] border-b border-stone">
-          <p className="eyebrow">Legal</p>
           <h1 className="font-serif font-medium text-[36px] leading-[1.1] tracking-heading text-ink">
             Terms of Service
           </h1>
