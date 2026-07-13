@@ -22,10 +22,11 @@ const cards = [
   },
   {
     image: WEBSITE_ASSETS.product.lifeInMotion,
-    imageClassName: 'object-contain p-3',
+    imageClassName: '',
     title: 'Your Life in Motion',
     description:
       'As you navigate through life, see where things are growing, easing, or demanding your attention.',
+    moving: true,
   },
   {
     image: WEBSITE_ASSETS.themeCards.selfIdentity,
@@ -36,10 +37,34 @@ const cards = [
   },
 ];
 
+function LifeInMotionVisual() {
+  return (
+    <div
+      role="img"
+      aria-label="Rheii Life in Motion cards moving continuously across the frame"
+      className="relative h-full w-full overflow-hidden"
+    >
+      <div className="life-motion-track flex h-full w-max will-change-transform">
+        {[0, 1].map((copyIndex) => (
+          <Image
+            key={copyIndex}
+            src={WEBSITE_ASSETS.product.lifeInMotion}
+            alt=""
+            aria-hidden="true"
+            width={3253}
+            height={1762}
+            className="h-full w-auto max-w-none shrink-0"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ThisIsRheiiSection() {
   return (
     <section className="relative w-full overflow-hidden bg-parchment">
-      <div className="relative z-10 px-5 sm:px-8 md:px-[104px] py-16 sm:py-20 md:py-28">
+      <div className="relative z-10 mx-auto w-full max-w-page px-5 py-16 sm:px-8 sm:py-20 md:px-[104px] md:py-28">
         {/* Header */}
         <div className="max-w-[640px] mb-14 md:mb-20">
           <motion.h2
@@ -59,9 +84,25 @@ export default function ThisIsRheiiSection() {
           className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-14"
         >
           {cards.map((card, index) => (
-            <motion.div key={card.title} variants={fadeUp} className="flex flex-col">
+            <motion.div
+              key={card.title}
+              variants={{
+                hidden: { opacity: 0, scale: 0.97, y: 8 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  transition: { duration: 0.24, ease: [0.215, 0.61, 0.355, 1] },
+                },
+              }}
+              className="flex flex-col"
+            >
               <div className="relative w-full aspect-[4/3] mb-6 rounded-[12px] overflow-hidden bg-bone">
-                <Image src={card.image} alt={card.title} fill className={card.imageClassName} />
+                {card.moving ? (
+                  <LifeInMotionVisual />
+                ) : (
+                  <Image src={card.image} alt={card.title} fill className={card.imageClassName} />
+                )}
               </div>
 
               <p className="mono-tag mb-[10px]">{String(index + 1).padStart(2, '0')}</p>

@@ -8,7 +8,7 @@
  * - Hero section with background image and title
  * - Our Mission section with sticky title and scrolling text
  * - Team section with member profiles
- * - Footer with social links and legal info
+ * - Footer with download and legal links
  */
 
 import Navigation from '@/components/landing/Navigation';

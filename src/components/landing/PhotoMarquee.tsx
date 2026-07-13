@@ -3,12 +3,14 @@
  *
  * Inspired by the edge-to-edge photo galleries on Les Amis and Vega: a seamless
  * auto-scrolling row of lifestyle images that sells the community feeling. The
- * track is duplicated so the loop is seamless; it pauses on hover, and under
- * prefers-reduced-motion the animation stops but the strip stays scrollable.
+ * track is duplicated so the loop is seamless. It pauses while offscreen and
+ * under prefers-reduced-motion so it does not spend work when it is not useful.
  */
 
 'use client';
 
+import { useRef } from 'react';
+import { useInView, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 
 interface MarqueePhoto {
@@ -25,30 +27,44 @@ export default function PhotoMarquee({
   reverse?: boolean;
   speed?: number;
 }) {
-  // Duplicate the set so the -50% translate loops seamlessly.
-  const track = [...photos, ...photos];
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(marqueeRef, { margin: '200px 0px', amount: 0.05 });
+  const shouldReduceMotion = useReducedMotion();
+  // Keep one full loop wider than ultra-wide displays so the duplicate is
+  // always waiting offscreen instead of exposing an empty tail.
+  const repeatCount = Math.max(1, Math.ceil(8 / Math.max(1, photos.length)));
+  const loopPhotos = Array.from({ length: repeatCount }, () => photos).flat();
 
   return (
-    <div className="group relative w-full overflow-x-auto scrollbar-hide">
+    <div ref={marqueeRef} className="relative w-full overflow-hidden">
       <div
-        className="flex w-max marquee-track group-hover:[animation-play-state:paused]"
+        className="marquee-track flex w-max will-change-transform"
         style={{
           animationDuration: `${speed}s`,
           animationDirection: reverse ? 'reverse' : 'normal',
+          animationPlayState: isInView && !shouldReduceMotion ? 'running' : 'paused',
         }}
       >
-        {track.map((photo, i) => (
+        {[0, 1].map((copyIndex) => (
           <div
-            key={i}
-            className="relative h-[220px] w-[340px] sm:h-[260px] sm:w-[440px] shrink-0 overflow-hidden rounded-[16px] border border-stone bg-bone mr-4 md:mr-5"
+            key={copyIndex}
+            aria-hidden={copyIndex === 1 ? true : undefined}
+            className="flex shrink-0 gap-4 pr-4 md:gap-5 md:pr-5"
           >
-            <Image
-              src={photo.src}
-              alt={photo.alt ?? ''}
-              fill
-              className="object-contain p-3"
-              sizes="(max-width: 640px) 340px, 440px"
-            />
+            {loopPhotos.map((photo, photoIndex) => (
+              <div
+                key={`${copyIndex}-${photo.src}-${photoIndex}`}
+                className="relative h-[220px] w-[340px] shrink-0 overflow-hidden rounded-[16px] border border-stone bg-bone sm:h-[260px] sm:w-[440px]"
+              >
+                <Image
+                  src={photo.src}
+                  alt={copyIndex === 0 ? (photo.alt ?? '') : ''}
+                  fill
+                  className="object-contain p-3"
+                  sizes="(max-width: 640px) 340px, 440px"
+                />
+              </div>
+            ))}
           </div>
         ))}
       </div>

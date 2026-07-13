@@ -10,18 +10,38 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { fadeUp, staggerParent, EASE_EDITORIAL } from '@/lib/motion';
 import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 
 const APP_STORE_URL = 'https://apps.apple.com/app/id6769975352';
 
+const snapshots = [
+  {
+    src: WEBSITE_ASSETS.themeCards.relationships,
+    alt: 'Rheii relationship insight',
+    className: 'left-0 top-[13%] w-[44%]',
+  },
+  {
+    src: WEBSITE_ASSETS.themeCards.work,
+    alt: 'Rheii work insight',
+    className: 'right-0 top-[28%] w-[46%]',
+  },
+  {
+    src: WEBSITE_ASSETS.themeCards.selfIdentity,
+    alt: 'Rheii self and identity insight',
+    className: 'left-[2%] bottom-[16%] w-[42%]',
+  },
+] as const;
+
 export default function HeroSection() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="relative w-full min-h-[100dvh] overflow-hidden bg-parchment">
       <div className="relative z-10 min-h-[100dvh] flex items-center">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] items-center gap-10 lg:gap-8 px-5 sm:px-8 md:px-[104px] pt-[96px] pb-[48px] lg:py-[96px]">
+        <div className="mx-auto grid w-full max-w-page grid-cols-1 items-center gap-10 px-5 pb-[48px] pt-[96px] sm:px-8 md:px-[104px] lg:grid-cols-[1fr_0.9fr] lg:gap-8 lg:py-[96px]">
           {/* Left — copy */}
           <motion.div
             variants={staggerParent(0.12, 0.05)}
@@ -42,14 +62,10 @@ export default function HeroSection() {
               variants={fadeUp}
               className="mt-[24px] font-editorial text-[20px] sm:text-[22px] leading-[1.5] text-ash max-w-[460px]"
             >
-              Join early members learning to navigate life from the inside out — with a journal that
-              reflects your patterns back to you over time.
+              Join early members learning to navigate life from the inside out.
             </motion.p>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-[32px] flex flex-wrap items-center gap-x-[24px] gap-y-[16px]"
-            >
+            <motion.div variants={fadeUp} className="mt-[32px]">
               <a
                 href={APP_STORE_URL}
                 target="_blank"
@@ -62,18 +78,15 @@ export default function HeroSection() {
                   className="h-[46px] w-auto"
                 />
               </a>
-              <a href="/community" className="link-accent font-sans text-[15px] leading-[20px]">
-                See the community →
-              </a>
             </motion.div>
           </motion.div>
 
-          {/* Right — product render on a paper stage */}
+          {/* Right — product render with quick, sequential insight reveals */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, ease: EASE_EDITORIAL, delay: 0.05 }}
-            className="relative flex items-center justify-center lg:justify-end"
+            className="relative isolate mx-auto flex w-full max-w-[620px] items-center justify-center lg:justify-end"
           >
             <Image
               src={WEBSITE_ASSETS.product.recurringThemes}
@@ -83,6 +96,28 @@ export default function HeroSection() {
               className="relative object-contain h-auto w-full max-w-[520px] max-h-[680px]"
               priority
             />
+
+            {snapshots.map((snapshot, index) => (
+              <motion.div
+                key={snapshot.src}
+                initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96, y: 8 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{
+                  duration: 0.24,
+                  delay: shouldReduceMotion ? 0 : 0.18 + index * 0.12,
+                  ease: [0.215, 0.61, 0.355, 1],
+                }}
+                className={`pointer-events-none absolute hidden select-none overflow-hidden rounded-[10px] border border-stone bg-bone sm:block ${snapshot.className}`}
+              >
+                <Image
+                  src={snapshot.src}
+                  alt={snapshot.alt}
+                  width={1012}
+                  height={554}
+                  className="h-auto w-full"
+                />
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>

@@ -33,11 +33,13 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 h-[68px] flex items-center border-b transition-colors duration-150 ${
-        scrolled ? 'border-stone bg-parchment/85 backdrop-blur-md' : 'border-transparent bg-parchment/0'
+        scrolled
+          ? 'border-stone bg-parchment/85 backdrop-blur-md'
+          : 'border-transparent bg-parchment/0'
       }`}
       style={{ transitionTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1.1)' }}
     >
-      <div className="relative w-full flex items-center justify-between px-5 sm:px-8 md:px-[104px]">
+      <div className="relative mx-auto flex w-full max-w-page items-center justify-between px-5 sm:px-8 md:px-[104px]">
         {/* Wordmark */}
         <a href="/" className="flex items-center flex-shrink-0" aria-label="Rheii home">
           <div className="relative h-[26px] w-[80px] sm:h-[28px] sm:w-[88px]">

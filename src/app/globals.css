@@ -210,7 +210,19 @@ main > div > section {
   animation-iteration-count: infinite;
 }
 
+/* The Life in Motion source contains three wide cards. Duplicating and moving
+   the strip by exactly half its width creates an uninterrupted in-frame loop. */
+.life-motion-track {
+  animation: marquee-scroll 18s linear infinite reverse;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .life-motion-track {
+    animation: none;
+    transform: none;
+  }
+
   *,
   *::before,
   *::after {

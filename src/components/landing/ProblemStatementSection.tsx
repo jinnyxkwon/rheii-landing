@@ -41,7 +41,7 @@ export default function ProblemStatementSection() {
       />
 
       {/* Statements */}
-      <div className="relative z-10 flex min-h-[82svh] flex-col gap-10 px-5 py-14 sm:px-8 md:h-full md:min-h-0 md:justify-between md:gap-0 md:px-[104px] md:py-[9vh]">
+      <div className="relative z-10 mx-auto flex min-h-[82svh] w-full max-w-page flex-col gap-10 px-5 py-14 sm:px-8 md:h-full md:min-h-0 md:justify-between md:gap-0 md:px-[104px] md:py-[9vh]">
         <motion.p
           {...reveal}
           className={`${statementClass} self-center md:self-start text-center md:text-left`}
@@ -58,9 +58,11 @@ export default function ProblemStatementSection() {
         </motion.p>
 
         <motion.p {...reveal} className={`${statementClass} self-center text-center`}>
-          <span className="font-editorial italic font-medium text-clay">Rheii</span> is a mirror for
-          what&apos;s shaping you over time — so the person you&apos;re becoming isn&apos;t just a
-          feeling. It&apos;s something you can actually see.
+          <span className="inline-block rounded-[4px] bg-clay px-2 py-0.5 font-editorial font-medium italic text-parchment">
+            Rheii
+          </span>{' '}
+          is a mirror for what&apos;s shaping you over time — so the person you&apos;re becoming
+          isn&apos;t just a feeling. It&apos;s something you can actually see.
         </motion.p>
       </div>
     </section>

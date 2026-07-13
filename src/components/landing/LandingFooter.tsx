@@ -10,19 +10,17 @@
 'use client';
 
 import Link from 'next/link';
-import { Instagram } from 'lucide-react';
 
 const APP_STORE_URL = 'https://apps.apple.com/app/id6769975352';
 
 const linkClass =
   'font-sans text-[14px] leading-[20px] text-parchment/70 hover:text-parchment transition-colors duration-150 ease-editorial';
-const labelClass =
-  'font-mono text-[12px] uppercase tracking-[0.14em] text-parchment/50 mb-[6px]';
+const labelClass = 'font-mono text-[12px] uppercase tracking-[0.14em] text-parchment/50 mb-[6px]';
 
 export default function LandingFooter() {
   return (
     <footer className="relative w-full bg-clay text-parchment">
-      <div className="px-5 sm:px-8 md:px-[104px] pt-[64px] pb-[40px]">
+      <div className="mx-auto w-full max-w-page px-5 pb-[40px] pt-[64px] sm:px-8 md:px-[104px]">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-[40px]">
           {/* Left — wordmark + tagline */}
           <div className="flex flex-col gap-[12px] max-w-[360px]">
@@ -36,17 +34,12 @@ export default function LandingFooter() {
           <div className="flex flex-wrap gap-x-[64px] gap-y-[32px]">
             <div className="flex flex-col gap-[10px]">
               <p className={labelClass}>Connect</p>
-              <Link
-                href="https://www.instagram.com/withrheii/"
+              <a
+                href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center gap-[8px] ${linkClass}`}
-                aria-label="Instagram"
+                className={linkClass}
               >
-                <Instagram size={16} strokeWidth={1.5} />
-                Instagram
-              </Link>
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
                 App Store
               </a>
             </div>

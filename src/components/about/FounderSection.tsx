@@ -34,34 +34,46 @@ export default function FounderSection() {
                 this
               </motion.h1>
             </div>
-            <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-[16px] border border-stone">
-                <Image
-                  src={WEBSITE_ASSETS.founderPortrait}
-                  alt="Rheii founder"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div
-                role="img"
-                aria-label="Placeholder for Hannah's portrait"
-                className="relative flex aspect-[3/4] select-none flex-col items-center justify-center overflow-hidden rounded-[16px] border border-stone bg-[#eeeae2] text-center"
-              >
+            <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3 sm:gap-5">
+              <figure className="min-w-0">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[16px] border border-stone bg-bone">
+                  <Image
+                    src={WEBSITE_ASSETS.founderPortrait}
+                    alt="Jinny, Co-Founder of Rheii"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-4">
+                  <p className="font-serif text-[20px] font-medium leading-tight text-ink">Jinny</p>
+                  <p className="mono-tag mt-1 uppercase tracking-[0.08em]">Co-Founder</p>
+                </figcaption>
+              </figure>
+
+              <figure className="min-w-0">
                 <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(139,69,73,0.14),transparent_62%)]"
-                />
-                <span className="relative font-editorial text-[64px] italic leading-none text-clay/55 sm:text-[80px]">
-                  H
-                </span>
-                <span className="relative mt-4 font-serif text-[18px] font-medium text-ink">
-                  Hannah
-                </span>
-                <span className="relative mt-1 font-mono text-[9px] uppercase tracking-[0.18em] text-ash">
-                  Photo coming soon
-                </span>
-              </div>
+                  role="img"
+                  aria-label="Placeholder for Hannah's portrait"
+                  className="relative flex aspect-[4/5] select-none flex-col items-center justify-center overflow-hidden rounded-[16px] border border-stone bg-[#eeeae2] text-center"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(139,69,73,0.14),transparent_62%)]"
+                  />
+                  <span className="relative font-editorial text-[64px] italic leading-none text-clay/55 sm:text-[80px]">
+                    H
+                  </span>
+                  <span className="relative mt-3 font-mono text-[8px] uppercase tracking-[0.16em] text-ash sm:text-[9px]">
+                    Photo coming soon
+                  </span>
+                </div>
+                <figcaption className="mt-4">
+                  <p className="font-serif text-[20px] font-medium leading-tight text-ink">
+                    Hannah
+                  </p>
+                  <p className="mono-tag mt-1 uppercase tracking-[0.08em]">Co-Founder</p>
+                </figcaption>
+              </figure>
             </motion.div>
           </motion.div>
 

@@ -1,15 +1,15 @@
 /**
  * Why Rheii Section — editorial redesign (community testimonials)
  *
- * Quotes are set as editorial serif pull-quotes (Cormorant italic) — the ideal
- * home for the serif voice — with sources in mono. Cards flattened to
- * hairline-bordered paper over the softened community photo.
+ * Community feedback moves in a continuous strip, followed by editorial
+ * speech bubbles that pop in quickly as a group. The fixed bubble layout keeps
+ * the motion expressive without shifting surrounding content.
  */
 
 'use client';
 
-import { motion } from 'framer-motion';
-import { fadeUp, staggerParent, inViewProps } from '@/lib/motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import { fadeUp, inViewProps } from '@/lib/motion';
 import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 import PhotoMarquee from './PhotoMarquee';
 
@@ -43,10 +43,26 @@ const quotes: Quote[] = [
 ];
 
 export default function WhyRheiiSection() {
+  const shouldReduceMotion = useReducedMotion();
+  const bubbleVariants = shouldReduceMotion
+    ? {
+        hidden: { opacity: 1 },
+        visible: { opacity: 1 },
+      }
+    : {
+        hidden: { opacity: 0, scale: 0.96, y: 8 },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          transition: { duration: 0.24, ease: [0.215, 0.61, 0.355, 1] as const },
+        },
+      };
+
   return (
     <section className="relative w-full overflow-hidden bg-parchment py-16 sm:py-20 md:py-28">
       {/* Header */}
-      <div className="px-5 sm:px-8 md:px-[104px]">
+      <div className="mx-auto w-full max-w-page px-5 sm:px-8 md:px-[104px]">
         <motion.div {...inViewProps} variants={fadeUp} className="max-w-[640px]">
           <h2 className="font-serif font-medium text-[30px] sm:text-[38px] md:text-[46px] leading-[1.14] tracking-heading text-ink">
             Hear it from the people using it
@@ -59,23 +75,32 @@ export default function WhyRheiiSection() {
         <PhotoMarquee photos={communityFeedback} speed={70} />
       </div>
 
-      {/* Quotes — set directly on the page, divided by a hairline rule */}
-      <div className="px-5 sm:px-8 md:px-[104px]">
+      {/* Quotes — staggered speech bubbles */}
+      <div className="mx-auto w-full max-w-page px-5 sm:px-8 md:px-[104px]">
         <motion.div
-          variants={staggerParent(0.1)}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: shouldReduceMotion ? 0 : 0.1 } },
+          }}
           {...inViewProps}
-          className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10"
+          className="grid grid-cols-1 items-start gap-x-7 gap-y-8 md:grid-cols-3 md:pb-10"
         >
-          {quotes.map((quote) => (
+          {quotes.map((quote, index) => (
             <motion.figure
               key={quote.source}
-              variants={fadeUp}
-              className="flex flex-col border-t border-stone pt-6"
+              variants={bubbleVariants}
+              className={`relative flex flex-col rounded-[24px] border border-stone bg-bone p-6 sm:p-7 ${
+                index === 1 ? 'md:mt-10' : index === 2 ? 'md:mt-4' : ''
+              }`}
             >
-              <blockquote className="font-editorial italic text-[21px] leading-[1.5] text-ink mb-6">
+              <blockquote className="mb-6 font-editorial text-[19px] italic leading-[1.5] text-ink sm:text-[20px]">
                 &ldquo;{quote.text}&rdquo;
               </blockquote>
               <figcaption className="mono-tag mt-auto">{quote.source}</figcaption>
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-[9px] left-8 h-4 w-4 rotate-45 border-b border-r border-stone bg-bone"
+              />
             </motion.figure>
           ))}
         </motion.div>
