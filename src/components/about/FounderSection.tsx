@@ -23,14 +23,14 @@ export default function FounderSection() {
         <div className="border-t border-[#E7E3DC]" />
       </div>
 
-      <div className="relative w-full max-w-[1440px] mx-auto px-[7.2vw] pt-[16vh] pb-[14vh]">
+      <div className="relative w-full max-w-[1440px] mx-auto px-[7.2vw] pt-[24vh] pb-[14vh]">
         {/* Header - centered */}
         <div className="text-center flex flex-col items-center">
           <h2
-            className="font-heading font-light whitespace-nowrap leading-[1.08] tracking-[-0.8px] text-[#4a1e2a] text-[clamp(20px,3.9vw,52px)]"
+            className="font-heading font-light whitespace-nowrap leading-[1.08] tracking-[-0.8px] text-[#4a1e2a] text-[clamp(14px,3.1vw,40px)]"
             style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
           >
-            Made by two women without a clear blueprint.
+            By two women learning how to grow without a clear blueprint
           </h2>
 
           <div
