@@ -93,7 +93,6 @@ export default function LandingPage() {
       <Navigation />
       <HeroSection />
       <ProblemToWithRheiiPinned />
-      <WhyRheiiSection />
       <CTASection />
       <LandingFooter />
     </main>
