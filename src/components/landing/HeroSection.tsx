@@ -75,7 +75,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}
-          className="flex flex-col gap-[8px] items-center lg:items-start text-black max-w-[540px] mx-auto lg:mx-0 lg:pl-8 xl:pl-16 text-center lg:text-left -mt-16 md:-mt-20"
+          className="flex flex-col gap-[8px] items-center lg:items-start text-black max-w-[540px] mx-auto lg:mx-0 lg:pl-8 xl:pl-16 text-center lg:text-left -mt-24 md:-mt-32"
         >
           <h1
             className="font-heading font-extralight text-[42px] sm:text-[48px] md:text-[54px] leading-[52px] sm:leading-[60px] md:leading-[66px]"
