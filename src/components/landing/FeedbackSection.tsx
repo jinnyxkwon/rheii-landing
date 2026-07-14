@@ -65,7 +65,6 @@ export default function FeedbackSection() {
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: index * 0.15 }}
               animate={{
                 y: [0, -14, 0, 10, 0],
                 rotate: [pos.rotate, pos.rotate - 1.5, pos.rotate, pos.rotate + 1.5, pos.rotate],
@@ -74,6 +73,7 @@ export default function FeedbackSection() {
                 duration: 5 + index,
                 repeat: Infinity,
                 ease: 'easeInOut',
+                delay: index * 0.15,
               }}
             >
                 <Image
