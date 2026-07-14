@@ -57,34 +57,27 @@ export default function FeedbackSection() {
           return (
             <motion.div
               key={index}
-              className="absolute w-[160px] sm:w-[200px] md:w-[240px] rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+              className="absolute w-[160px] sm:w-[200px] md:w-[240px]"
               style={{
                 left: pos.left,
                 top: pos.top,
               }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              animate={{
+                y: [0, -10, 0, 6, 0],
+              }}
+              transition={{
+                duration: 4 + index,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
             >
-              <motion.div
-                animate={{
-                  y: [0, -10, 0, 6, 0],
-                }}
-                transition={{
-                  duration: 4 + index,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              >
                 <Image
                   src={img.src}
                   alt={img.alt}
                   width={img.width}
                   height={img.height}
-                  className="w-full h-auto rounded-2xl"
+                  className="w-full h-auto rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
                 />
-              </motion.div>
             </motion.div>
           );
         })}
