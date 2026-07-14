@@ -21,8 +21,17 @@ export default function FeedbackSection() {
   return (
     <section
       className="relative w-full overflow-hidden py-20 md:py-32"
-      style={{ backgroundColor: '#EFEFEE' }}
     >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/home/Community BG.png"
+          alt="Community background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       {/* Title */}
       <div className="px-5 sm:px-8 md:px-[7vw] mb-16 md:mb-24">
         <motion.h2
