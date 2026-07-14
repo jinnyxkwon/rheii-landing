@@ -69,13 +69,13 @@ export default function HeroSection() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: '#f7f6f4' }}
     >
-      <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24 px-6 sm:px-10 md:px-16 pt-8 md:pt-12 pb-16 md:pb-24 lg:min-h-screen">
+      <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24 px-6 sm:px-10 md:px-16 pt-28 md:pt-32 pb-16 md:pb-24 lg:min-h-screen">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}
-          className="flex flex-col gap-[8px] items-center lg:items-start text-black max-w-[540px] mx-auto lg:mx-0 lg:pl-8 xl:pl-16 text-center lg:text-left"
+          className="flex flex-col gap-[8px] items-center lg:items-start text-black max-w-[540px] mx-auto lg:mx-0 lg:pl-8 xl:pl-16 text-center lg:text-left -mt-16 md:-mt-20"
         >
           <h1
             className="font-heading font-extralight text-[42px] sm:text-[48px] md:text-[54px] leading-[52px] sm:leading-[60px] md:leading-[66px]"
