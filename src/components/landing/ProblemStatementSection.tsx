@@ -28,7 +28,7 @@ export default function ProblemStatementSection() {
       <div className="absolute inset-0">
         {/* Scenic Background Image */}
         <Image
-          src="/images/landing/home-about-fastmoving.jpg"
+          src="/images/landing/DSC01425 (1).jpg"
           alt="Scenic view"
           fill
           className="object-cover"
