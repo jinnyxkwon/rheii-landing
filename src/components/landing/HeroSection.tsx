@@ -69,7 +69,7 @@ export default function HeroSection() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: '#f7f6f4' }}
     >
-      <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24 px-6 sm:px-10 md:px-16 pt-28 md:pt-32 pb-16 md:pb-24 lg:min-h-screen">
+      <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24 px-6 sm:px-10 md:px-16 pt-20 md:pt-24 pb-16 md:pb-24 lg:min-h-screen">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
