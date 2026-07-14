@@ -127,13 +127,11 @@ export default function HeroSection() {
             <motion.div
               key={card.src}
               initial={{ opacity: 0, scale: 0.8, y: 8 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
+              animate={{ opacity: 1, scale: 1, y: [0, -6, 0, 4, 0] }}
               transition={{
-                delay: card.delay,
-                duration: 0.5,
-                type: 'spring',
-                stiffness: 260,
-                damping: 20,
+                opacity: { delay: card.delay, duration: 0.5, type: 'spring', stiffness: 260, damping: 20 },
+                scale: { delay: card.delay, duration: 0.5, type: 'spring', stiffness: 260, damping: 20 },
+                y: { delay: card.delay + 0.5, duration: 3.5 + (card.delay * 0.3), repeat: Infinity, ease: 'easeInOut' },
               }}
               className="absolute drop-shadow-[0_12px_45px_rgba(0,0,0,0.14)]"
               style={{ left: card.left, top: card.top, width: card.w }}
