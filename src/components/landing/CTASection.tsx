@@ -75,7 +75,7 @@ export default function CTASection() {
               src="/images/landing/community wallpaper.jpg"
               alt="Community wallpaper"
               fill
-              className="object-cover"
+              className="object-cover object-[center_70%]"
               priority
             />
           </div>
