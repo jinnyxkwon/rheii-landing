@@ -14,13 +14,13 @@ const stickerImages = [
 ];
 
 const stickerPositions = [
-  { left: '2%',  top: '5%',  rotate: 0 },
-  { left: '18%', top: '35%', rotate: 5 },
-  { left: '35%', top: '2%',  rotate: 0 },
-  { left: '52%', top: '40%', rotate: 0 },
-  { left: '65%', top: '5%',  rotate: 0 },
-  { left: '80%', top: '30%', rotate: 5 },
-  { left: '10%', top: '65%', rotate: 0 },
+  { left: '0%',   top: '0%',  rotate: 0 },
+  { left: '28%',  top: '5%',  rotate: 5 },
+  { left: '56%',  top: '0%',  rotate: 0 },
+  { left: '82%',  top: '5%',  rotate: 0 },
+  { left: '10%',  top: '50%', rotate: 0 },
+  { left: '38%',  top: '55%', rotate: 5 },
+  { left: '66%',  top: '50%', rotate: 0 },
 ];
 
 export default function FeedbackSection() {
