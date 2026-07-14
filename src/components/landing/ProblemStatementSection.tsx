@@ -52,7 +52,7 @@ export default function ProblemStatementSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-extralight text-[18px] sm:text-[20px] md:text-[21px] leading-[26px] sm:leading-[30px] md:leading-[31px] text-white w-full max-w-[396px] self-center md:self-start text-center md:text-left"
+          className="font-heading font-extralight text-[20px] sm:text-[22px] md:text-[24px] leading-[28px] sm:leading-[32px] md:leading-[34px] text-white w-full max-w-[396px] self-center md:self-start md:ml-[5%] text-center md:text-left"
           style={{
             fontVariationSettings: "'opsz' 14",
           }}
@@ -67,7 +67,7 @@ export default function ProblemStatementSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-extralight text-[18px] sm:text-[20px] md:text-[21px] leading-[26px] sm:leading-[30px] md:leading-[31px] text-white w-full max-w-[396px] self-center md:self-end text-center md:text-right"
+          className="font-heading font-extralight text-[20px] sm:text-[22px] md:text-[24px] leading-[28px] sm:leading-[32px] md:leading-[34px] text-white w-full max-w-[396px] self-center md:self-end md:mr-[5%] text-center md:text-right"
           style={{
             fontVariationSettings: "'opsz' 14",
           }}
@@ -81,7 +81,7 @@ export default function ProblemStatementSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-extralight text-[18px] sm:text-[20px] md:text-[21px] leading-[26px] sm:leading-[30px] md:leading-[31px] text-center text-white w-full max-w-[394px] self-center"
+          className="font-heading font-extralight text-[20px] sm:text-[22px] md:text-[24px] leading-[28px] sm:leading-[32px] md:leading-[34px] text-center text-white w-full max-w-[394px] self-center"
           style={{
             fontVariationSettings: "'opsz' 14",
           }}
@@ -96,7 +96,7 @@ export default function ProblemStatementSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-extralight text-[18px] sm:text-[20px] md:text-[20px] leading-[26px] sm:leading-[30px] md:leading-[30px] text-center text-white w-full max-w-[447px] self-center"
+          className="font-heading font-extralight text-[20px] sm:text-[22px] md:text-[24px] leading-[28px] sm:leading-[32px] md:leading-[34px] text-center text-white w-full max-w-[447px] self-center"
           style={{
             fontVariationSettings: "'opsz' 14",
           }}
