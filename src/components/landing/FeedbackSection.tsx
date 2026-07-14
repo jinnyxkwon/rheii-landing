@@ -3,25 +3,20 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const feedbackImages = [
-  {
-    src: '/images/landing/feedback 1.jpg',
-    alt: 'Feedback 1',
-    width: 400,
-    height: 500,
-  },
-  {
-    src: '/images/landing/feedback 2.jpg',
-    alt: 'Feedback 2',
-    width: 400,
-    height: 500,
-  },
-  {
-    src: '/images/landing/feedback 3.jpg',
-    alt: 'Feedback 3',
-    width: 400,
-    height: 500,
-  },
+const stickerImages = [
+  { src: '/images/landing/feedback 1.jpg', alt: 'Feedback 1', w: 180, h: 220 },
+  { src: '/images/landing/community 1.png', alt: 'Community 1', w: 200, h: 200 },
+  { src: '/images/landing/feedback 2.jpg', alt: 'Feedback 2', w: 160, h: 200 },
+  { src: '/images/landing/community 2.jpeg', alt: 'Community 2', w: 190, h: 190 },
+  { src: '/images/landing/feedback 3.jpg', alt: 'Feedback 3', w: 170, h: 210 },
+];
+
+const stickerPositions = [
+  { left: '2%',  top: '5%',  rotate: -8 },
+  { left: '18%', top: '45%', rotate: 5 },
+  { left: '38%', top: '8%',  rotate: -3 },
+  { left: '55%', top: '50%', rotate: 7 },
+  { left: '75%', top: '12%', rotate: -5 },
 ];
 
 export default function FeedbackSection() {
@@ -44,40 +39,36 @@ export default function FeedbackSection() {
         </motion.h2>
       </div>
 
-      {/* Floating Image Cards */}
-      <div className="relative w-full max-w-[1200px] mx-auto h-[400px] sm:h-[500px] md:h-[600px] px-5 sm:px-8 md:px-[7vw]">
-        {feedbackImages.map((img, index) => {
-          const positions = [
-            { left: '5%', top: '10%', rotate: -6 },
-            { left: '35%', top: '5%', rotate: 3 },
-            { left: '65%', top: '15%', rotate: -2 },
-          ];
-          const pos = positions[index];
-
+      {/* Sticker Grid */}
+      <div className="relative w-full max-w-[1200px] mx-auto h-[500px] sm:h-[600px] md:h-[700px] px-5 sm:px-8 md:px-[7vw]">
+        {stickerImages.map((img, index) => {
+          const pos = stickerPositions[index];
           return (
             <motion.div
               key={index}
-              className="absolute w-[160px] sm:w-[200px] md:w-[240px]"
+              className="absolute"
               style={{
                 left: pos.left,
                 top: pos.top,
+                width: `${img.w}px`,
               }}
               animate={{
-                y: [0, -10, 0, 6, 0],
+                y: [0, -8 - (index % 3) * 4, 0, 6 + (index % 2) * 3, 0],
+                rotate: [pos.rotate, pos.rotate - 1.5, pos.rotate, pos.rotate + 1.5, pos.rotate],
               }}
               transition={{
-                duration: 4 + index,
+                duration: 4 + index * 0.7,
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
             >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  className="w-full h-auto rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
-                />
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={img.w}
+                height={img.h}
+                className="w-full h-auto rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
+              />
             </motion.div>
           );
         })}
