@@ -75,10 +75,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}
-          className="flex flex-col gap-[8px] items-center lg:items-start text-black max-w-[500px] mx-auto lg:mx-0 text-center lg:text-left"
+          className="flex flex-col gap-[8px] items-center lg:items-start text-black max-w-[540px] mx-auto lg:mx-0 lg:pl-8 xl:pl-16 text-center lg:text-left"
         >
           <h1
-            className="font-heading font-extralight text-[36px] sm:text-[41px] md:text-[45px] leading-[54px] sm:leading-[63px] md:leading-[68px]"
+            className="font-heading font-extralight text-[42px] sm:text-[48px] md:text-[54px] leading-[52px] sm:leading-[60px] md:leading-[66px]"
             style={{
               transform: 'scaleX(0.985)',
               fontVariationSettings: "'opsz' 14",
@@ -86,7 +86,7 @@ export default function HeroSection() {
           >
             Your growth made visible.
           </h1>
-          <p className="text-[16px] sm:text-[18px] leading-[24px] sm:leading-[28px] max-w-[420px] mt-[16px] font-light opacity-90">
+          <p className="text-[18px] sm:text-[21px] leading-[28px] sm:leading-[32px] max-w-[460px] mt-[16px] font-light opacity-90">
             Join other early members who are learning to navigate life from the inside out.
           </p>
           <a
@@ -98,7 +98,7 @@ export default function HeroSection() {
             <img
               src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
               alt="Download on the App Store"
-              className="h-[44px] w-auto"
+              className="h-[52px] w-auto"
             />
           </a>
         </motion.div>
