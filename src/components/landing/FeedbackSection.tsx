@@ -12,11 +12,11 @@ const stickerImages = [
 ];
 
 const stickerPositions = [
-  { left: '2%',  top: '5%',  rotate: -8 },
+  { left: '2%',  top: '5%',  rotate: 0 },
   { left: '18%', top: '45%', rotate: 5 },
-  { left: '38%', top: '8%',  rotate: -3 },
+  { left: '38%', top: '8%',  rotate: 0 },
   { left: '55%', top: '50%', rotate: 7 },
-  { left: '75%', top: '12%', rotate: -5 },
+  { left: '75%', top: '12%', rotate: 0 },
 ];
 
 export default function FeedbackSection() {
@@ -54,7 +54,7 @@ export default function FeedbackSection() {
               }}
               animate={{
                 y: [0, -8 - (index % 3) * 4, 0, 6 + (index % 2) * 3, 0],
-                rotate: [pos.rotate, pos.rotate - 1.5, pos.rotate, pos.rotate + 1.5, pos.rotate],
+                ...(img.src.includes('community') ? { rotate: [pos.rotate, pos.rotate - 1.5, pos.rotate, pos.rotate + 1.5, pos.rotate] } : {}),
               }}
               transition={{
                 duration: 4 + index * 0.7,
