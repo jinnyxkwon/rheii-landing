@@ -4,7 +4,9 @@ import dynamic from 'next/dynamic';
 import { useEffect, useRef } from 'react';
 import Navigation from './Navigation';
 import HeroSection from './HeroSection';
-import ProblemToWithRheiiPinned from './ProblemToWithRheiiPinned';
+import RheiiDefinitionSection from './RheiiDefinitionSection';
+import ThisIsRheiiSection from './ThisIsRheiiSection';
+import FeedbackSection from './FeedbackSection';
 import WhyRheiiSection from './WhyRheiiSection';
 
 const CTASection = dynamic(() => import('./CTASection'), { ssr: true });
@@ -91,8 +93,17 @@ export default function LandingPage() {
   return (
     <main ref={mainRef} className="overflow-x-hidden" style={{ margin: 0, padding: 0 }}>
       <Navigation />
-      <HeroSection />
-      <ProblemToWithRheiiPinned />
+      <div
+        style={{
+          background:
+            'linear-gradient(180deg, #f7f6f4 0%, #f3f1ec 55%, #eeebe4 100%)',
+        }}
+      >
+        <HeroSection />
+        <RheiiDefinitionSection />
+      </div>
+      <ThisIsRheiiSection />
+      <FeedbackSection />
       <CTASection />
       <LandingFooter />
     </main>

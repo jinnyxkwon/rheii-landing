@@ -66,8 +66,7 @@ const themeCards = [
 export default function HeroSection() {
   return (
     <section
-      className="relative w-full overflow-hidden"
-      style={{ backgroundColor: '#f7f6f4' }}
+      className="relative w-full overflow-hidden bg-transparent"
     >
       <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24 px-6 sm:px-10 md:px-16 pt-28 md:pt-32 pb-16 md:pb-24 lg:min-h-screen">
         {/* Headline */}

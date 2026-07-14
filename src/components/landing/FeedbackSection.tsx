@@ -3,45 +3,33 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const stickerImages = [
-  { src: '/images/landing/feedback 1.jpg', alt: 'Feedback 1', w: 260, h: 320 },
-  { src: '/images/landing/community 1.png', alt: 'Community 1', w: 280, h: 280 },
-  { src: '/images/landing/feedback 2.jpg', alt: 'Feedback 2', w: 240, h: 300 },
-  { src: '/images/landing/feedback 4.jpg', alt: 'Feedback 4', w: 230, h: 290 },
-  { src: '/images/landing/feedback 3.jpg', alt: 'Feedback 3', w: 250, h: 310 },
-  { src: '/images/landing/feedback 5.jpg', alt: 'Feedback 5', w: 220, h: 280 },
-  { src: '/images/landing/feedback 6.jpg', alt: 'Feedback 6', w: 240, h: 300 },
-  { src: '/images/landing/40e8cacf017f25c1d3bf328f020ba38c.png', alt: 'Community sticker', w: 200, h: 200 },
+const feedbackImages = [
+  '/images/landing/feedback 1.jpg',
+  '/images/landing/feedback 2.jpg',
+  '/images/landing/feedback 3.jpg',
+  '/images/landing/feedback 4.jpg',
+  '/images/landing/feedback 5.jpg',
+  '/images/landing/feedback 6.jpg',
 ];
 
-const stickerPositions = [
-  { left: '0%',   top: '0%',  rotate: 0 },
-  { left: '28%',  top: '5%',  rotate: 5 },
-  { left: '56%',  top: '0%',  rotate: 0 },
-  { left: '82%',  top: '5%',  rotate: 0 },
-  { left: '10%',  top: '50%', rotate: 0 },
-  { left: '38%',  top: '55%', rotate: 5 },
-  { left: '66%',  top: '50%', rotate: 0 },
-  { left: '88%',  top: '55%', rotate: 0 },
-];
+// Duplicate the set so the marquee can loop seamlessly (shift by -50%).
+const marquee = [...feedbackImages, ...feedbackImages];
 
 export default function FeedbackSection() {
   return (
-    <section
-      className="relative w-full overflow-hidden py-12 md:py-16"
-    >
-      {/* Background Image */}
+    <section className="relative w-full overflow-hidden pt-12 pb-24 md:pt-16 md:pb-32">
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/images/home/Community BG.png"
           alt="Community background"
           fill
           className="object-cover"
-          priority
         />
       </div>
+
       {/* Title */}
-      <div className="relative z-10 px-5 sm:px-8 md:px-[7vw] mb-12 md:mb-20">
+      <div className="relative z-10 px-5 sm:px-8 md:px-[7vw] mb-10 md:mb-14">
         <motion.h2
           className="font-heading font-normal text-[32px] sm:text-[40px] md:text-[48px] leading-[40px] sm:leading-[50px] md:leading-[58px] tracking-[-0.8px] text-center text-black"
           style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
@@ -54,39 +42,23 @@ export default function FeedbackSection() {
         </motion.h2>
       </div>
 
-      {/* Floating Sticker Images */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto h-[350px] sm:h-[400px] md:h-[450px] px-5 sm:px-8 md:px-[7vw]">
-        {stickerImages.map((img, index) => {
-          const pos = stickerPositions[index];
-          return (
-            <motion.div
+      {/* Banner carousel */}
+      <div className="relative z-10 w-full overflow-hidden">
+        <motion.div
+          className="flex w-max gap-5 sm:gap-6"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ duration: 34, repeat: Infinity, ease: 'linear' }}
+        >
+          {marquee.map((src, index) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
               key={index}
-              className="absolute"
-              style={{
-                left: pos.left,
-                top: pos.top,
-                width: `${img.w}px`,
-              }}
-              animate={{
-                y: [0, -8 - (index % 3) * 4, 0, 6 + (index % 2) * 3, 0],
-                ...(img.src.includes('community') ? { rotate: [pos.rotate, pos.rotate - 1.5, pos.rotate, pos.rotate + 1.5, pos.rotate] } : {}),
-              }}
-              transition={{
-                duration: 4 + index * 0.7,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={img.w}
-                height={img.h}
-                className={`w-full h-auto ${(img.src.includes('community') || img.src.includes('40e8cacf')) ? '' : 'rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.18)]'}`}
-              />
-            </motion.div>
-          );
-        })}
+              src={src}
+              alt={`Community feedback ${(index % feedbackImages.length) + 1}`}
+              className="shrink-0 h-[130px] sm:h-[160px] w-auto rounded-xl bg-white shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
+            />
+          ))}
+        </motion.div>
       </div>
     </section>
   );
