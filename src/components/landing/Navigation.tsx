@@ -74,6 +74,15 @@ export default function Navigation() {
               Community
             </p>
           </a>
+
+          <a
+            href="https://apps.apple.com/us/app/rheii/id6769975352"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 inline-flex items-center justify-center rounded-full bg-rheti-primary-500 px-5 py-2 font-inter font-medium text-[13px] leading-[18px] text-white hover:bg-rheti-primary-600 transition-colors"
+          >
+            Download
+          </a>
         </div>
 
         <div className="relative md:hidden flex items-center gap-2">
@@ -110,6 +119,16 @@ export default function Navigation() {
               >
                 Community
               </a>
+              <div className="border-t border-rheti-secondary-100">
+                <a
+                  href="https://apps.apple.com/us/app/rheii/id6769975352"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-3 text-[14px] leading-[20px] font-medium text-white bg-rheti-primary-500 hover:bg-rheti-primary-600"
+                >
+                  Download
+                </a>
+              </div>
             </div>
           )}
         </div>
