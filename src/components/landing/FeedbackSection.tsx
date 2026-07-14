@@ -11,6 +11,7 @@ const stickerImages = [
   { src: '/images/landing/feedback 4.jpg', alt: 'Feedback 4', w: 230, h: 290 },
   { src: '/images/landing/feedback 5.jpg', alt: 'Feedback 5', w: 220, h: 280 },
   { src: '/images/landing/feedback 6.jpg', alt: 'Feedback 6', w: 240, h: 300 },
+  { src: '/images/landing/40e8cacf017f25c1d3bf328f020ba38c.png', alt: 'Community sticker', w: 200, h: 200 },
 ];
 
 const stickerPositions = [
@@ -21,6 +22,7 @@ const stickerPositions = [
   { left: '10%',  top: '50%', rotate: 0 },
   { left: '38%',  top: '55%', rotate: 5 },
   { left: '66%',  top: '50%', rotate: 0 },
+  { left: '88%',  top: '55%', rotate: 0 },
 ];
 
 export default function FeedbackSection() {
@@ -80,7 +82,7 @@ export default function FeedbackSection() {
                 alt={img.alt}
                 width={img.w}
                 height={img.h}
-                className={`w-full h-auto ${img.src.includes('community') ? '' : 'rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.18)]'}`}
+                className={`w-full h-auto ${(img.src.includes('community') || img.src.includes('40e8cacf')) ? '' : 'rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.18)]'}`}
               />
             </motion.div>
           );
