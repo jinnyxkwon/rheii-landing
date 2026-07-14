@@ -67,12 +67,7 @@ export default function FeedbackSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-                <motion.Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  className="w-full h-auto"
+                <motion.div
                   animate={{
                     y: [0, -10, 0, 6, 0],
                   }}
@@ -81,7 +76,15 @@ export default function FeedbackSection() {
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
-                />
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={img.width}
+                    height={img.height}
+                    className="w-full h-auto"
+                  />
+                </motion.div>
             </motion.div>
           );
         })}
