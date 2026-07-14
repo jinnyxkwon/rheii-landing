@@ -44,21 +44,17 @@ export default function FeedbackSection() {
 
       {/* Banner carousel */}
       <div className="relative z-10 w-full overflow-hidden">
-        <motion.div
-          className="flex w-max gap-5 sm:gap-6"
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{ duration: 34, repeat: Infinity, ease: 'linear' }}
-        >
+        <div className="flex w-max gap-5 sm:gap-6 animate-[marquee_34s_linear_infinite] hover:[animation-play-state:paused]">
           {marquee.map((src, index) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               key={index}
               src={src}
               alt={`Community feedback ${(index % feedbackImages.length) + 1}`}
-              className="shrink-0 h-[130px] sm:h-[160px] w-auto rounded-xl bg-white shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
+              className="shrink-0 h-[130px] sm:h-[160px] w-auto"
             />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
