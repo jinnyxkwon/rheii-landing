@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const stickerImages = [
-  { src: '/images/landing/feedback 1.jpg', alt: 'Feedback 1', w: 180, h: 220 },
-  { src: '/images/landing/community 1.png', alt: 'Community 1', w: 200, h: 200 },
-  { src: '/images/landing/feedback 2.jpg', alt: 'Feedback 2', w: 160, h: 200 },
-  { src: '/images/landing/community 2.jpeg', alt: 'Community 2', w: 190, h: 190 },
-  { src: '/images/landing/feedback 3.jpg', alt: 'Feedback 3', w: 170, h: 210 },
+  { src: '/images/landing/feedback 1.jpg', alt: 'Feedback 1', w: 260, h: 320 },
+  { src: '/images/landing/community 1.png', alt: 'Community 1', w: 280, h: 280 },
+  { src: '/images/landing/feedback 2.jpg', alt: 'Feedback 2', w: 240, h: 300 },
+  { src: '/images/landing/community 2.jpeg', alt: 'Community 2', w: 270, h: 270 },
+  { src: '/images/landing/feedback 3.jpg', alt: 'Feedback 3', w: 250, h: 310 },
 ];
 
 const stickerPositions = [
