@@ -21,17 +21,26 @@ const snapshots = [
   {
     src: WEBSITE_ASSETS.themeCards.relationships,
     alt: 'Rheii relationship insight',
-    className: 'left-0 top-[13%] w-[44%]',
+    className: 'left-0 top-[13%] w-[52.8%] origin-left',
+    entranceOffset: { x: -18, y: 12 },
+    sourceSize: { width: 962, height: 409 },
+    crop: { x: 36, y: 22, width: 884, height: 368 },
   },
   {
     src: WEBSITE_ASSETS.themeCards.work,
     alt: 'Rheii work insight',
-    className: 'right-0 top-[28%] w-[46%]',
+    className: 'right-0 top-[35.5%] w-[55.2%] origin-right',
+    entranceOffset: { x: 18, y: 12 },
+    sourceSize: { width: 1012, height: 554 },
+    crop: { x: 84, y: 48, width: 892, height: 480 },
   },
   {
     src: WEBSITE_ASSETS.themeCards.selfIdentity,
     alt: 'Rheii self and identity insight',
-    className: 'left-[2%] bottom-[16%] w-[42%]',
+    className: 'left-[2%] bottom-[16%] w-[50.4%] origin-left',
+    entranceOffset: { x: -18, y: 12 },
+    sourceSize: { width: 812, height: 423 },
+    crop: { x: 20, y: 10, width: 696, height: 376 },
   },
 ] as const;
 
@@ -81,7 +90,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right — product render with quick, sequential insight reveals */}
+          {/* Right — product render with soft, sequential insight reveals */}
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,10 +98,10 @@ export default function HeroSection() {
             className="relative isolate mx-auto flex w-full max-w-[620px] items-center justify-center lg:justify-end"
           >
             <Image
-              src={WEBSITE_ASSETS.product.recurringThemes}
-              alt="Recurring themes in the Rheii app"
-              width={1206}
-              height={1745}
+              src={WEBSITE_ASSETS.product.hero}
+              alt="A quiet moment of reflection with Rheii"
+              width={4419}
+              height={6250}
               className="relative object-contain h-auto w-full max-w-[520px] max-h-[680px]"
               priority
             />
@@ -100,21 +109,37 @@ export default function HeroSection() {
             {snapshots.map((snapshot, index) => (
               <motion.div
                 key={snapshot.src}
-                initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96, y: 8 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
+                initial={
+                  shouldReduceMotion
+                    ? false
+                    : {
+                        opacity: 0,
+                        scale: 0.965,
+                        x: snapshot.entranceOffset.x,
+                        y: snapshot.entranceOffset.y,
+                      }
+                }
+                animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                 transition={{
-                  duration: 0.24,
-                  delay: shouldReduceMotion ? 0 : 0.18 + index * 0.12,
-                  ease: [0.215, 0.61, 0.355, 1],
+                  duration: 0.48,
+                  delay: shouldReduceMotion ? 0 : 0.2 + index * 0.11,
+                  ease: [0.165, 0.84, 0.44, 1],
                 }}
-                className={`pointer-events-none absolute hidden select-none overflow-hidden rounded-[10px] border border-stone bg-bone sm:block ${snapshot.className}`}
+                className={`pointer-events-none absolute hidden select-none overflow-hidden rounded-[10px] sm:block ${snapshot.className}`}
+                style={{ aspectRatio: `${snapshot.crop.width} / ${snapshot.crop.height}` }}
               >
                 <Image
                   src={snapshot.src}
                   alt={snapshot.alt}
-                  width={1012}
-                  height={554}
-                  className="h-auto w-full"
+                  width={snapshot.sourceSize.width}
+                  height={snapshot.sourceSize.height}
+                  className="absolute max-w-none"
+                  style={{
+                    width: `${(snapshot.sourceSize.width / snapshot.crop.width) * 100}%`,
+                    height: `${(snapshot.sourceSize.height / snapshot.crop.height) * 100}%`,
+                    left: `${(-snapshot.crop.x / snapshot.crop.width) * 100}%`,
+                    top: `${(-snapshot.crop.y / snapshot.crop.height) * 100}%`,
+                  }}
                 />
               </motion.div>
             ))}

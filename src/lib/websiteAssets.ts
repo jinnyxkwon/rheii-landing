@@ -6,6 +6,7 @@
  */
 export const WEBSITE_ASSETS = {
   product: {
+    hero: '/images/website-assets/1.jpg',
     recurringThemes: '/images/website-assets/product-recurring-themes.jpg',
     lifeInMotion: '/images/website-assets/product-life-in-motion.png',
   },
@@ -21,5 +22,6 @@ export const WEBSITE_ASSETS = {
     selfIdentity: '/images/website-assets/theme-self-identity.png',
     work: '/images/website-assets/theme-work.png',
   },
+  communityBackground: '/images/website-assets/community.jpg',
   founderPortrait: '/images/website-assets/founder-portrait.jpg',
 } as const;

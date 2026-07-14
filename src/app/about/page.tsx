@@ -5,9 +5,8 @@
  *
  * Features:
  * - Navigation bar (same as landing page)
- * - Hero section with background image and title
- * - Our Mission section with sticky title and scrolling text
- * - Team section with member profiles
+ * - Centered founder introduction
+ * - Individual founder profile cards
  * - Footer with download and legal links
  */
 
@@ -17,7 +16,7 @@ import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-parchment">
+    <main className="min-h-screen bg-[#F5F5F4]">
       {/* Navigation */}
       <Navigation />
 

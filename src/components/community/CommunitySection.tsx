@@ -43,9 +43,9 @@ export default function CommunitySection() {
           variants={fadeUp}
           className="font-editorial text-[20px] leading-[1.55] text-ash mt-[32px] max-w-[480px]"
         >
-          Through our community, growth becomes shared rather than solitary. Our offline gatherings
-          are designed around your needs — connecting you with like-minded people who understand
-          your context, grow alongside you, and challenge you constructively.
+          Through our community, growth becomes shared rather than solitary. Connect with
+          like-minded people who understand your context, grow alongside you, and challenge you
+          constructively.
         </motion.p>
       </motion.div>
 

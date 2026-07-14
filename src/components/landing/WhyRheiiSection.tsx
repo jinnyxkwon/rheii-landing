@@ -1,26 +1,16 @@
 /**
- * Why Rheii Section — editorial redesign (community testimonials)
+ * Why Rheii Section — community testimonials
  *
- * Community feedback moves in a continuous strip, followed by editorial
- * speech bubbles that pop in quickly as a group. The fixed bubble layout keeps
- * the motion expressive without shifting surrounding content.
+ * A close adaptation of the original website: one softly washed community
+ * photo, a centered serif heading, and three aligned testimonial cards.
  */
 
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { fadeUp, inViewProps } from '@/lib/motion';
 import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
-import PhotoMarquee from './PhotoMarquee';
-
-const communityFeedback = [
-  { src: WEBSITE_ASSETS.testimonials.firstEntry, alt: 'Member feedback after a first Rheii entry' },
-  { src: WEBSITE_ASSETS.testimonials.amazing, alt: 'Member describing Rheii as amazing' },
-  {
-    src: WEBSITE_ASSETS.testimonials.loopedThinking,
-    alt: 'Member feedback about working through looped thinking with Rheii',
-  },
-];
 
 interface Quote {
   text: string;
@@ -43,67 +33,41 @@ const quotes: Quote[] = [
 ];
 
 export default function WhyRheiiSection() {
-  const shouldReduceMotion = useReducedMotion();
-  const bubbleVariants = shouldReduceMotion
-    ? {
-        hidden: { opacity: 1 },
-        visible: { opacity: 1 },
-      }
-    : {
-        hidden: { opacity: 0, scale: 0.96, y: 8 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: { duration: 0.24, ease: [0.215, 0.61, 0.355, 1] as const },
-        },
-      };
-
   return (
-    <section className="relative w-full overflow-hidden bg-parchment py-16 sm:py-20 md:py-28">
-      {/* Header */}
-      <div className="mx-auto w-full max-w-page px-5 sm:px-8 md:px-[104px]">
-        <motion.div {...inViewProps} variants={fadeUp} className="max-w-[640px]">
-          <h2 className="font-serif font-medium text-[30px] sm:text-[38px] md:text-[46px] leading-[1.14] tracking-heading text-ink">
-            Hear it from the people using it
-          </h2>
-        </motion.div>
-      </div>
+    <section className="relative isolate min-h-[640px] w-full overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 md:px-[104px] md:py-20">
+      <Image
+        src={WEBSITE_ASSETS.communityBackground}
+        alt=""
+        fill
+        sizes="100vw"
+        className="-z-20 select-none object-cover object-center"
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-white/75" />
 
-      {/* Community photo marquee — edge to edge */}
-      <div className="my-12 md:my-16">
-        <PhotoMarquee photos={communityFeedback} speed={70} />
-      </div>
-
-      {/* Quotes — staggered speech bubbles */}
-      <div className="mx-auto w-full max-w-page px-5 sm:px-8 md:px-[104px]">
-        <motion.div
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: shouldReduceMotion ? 0 : 0.1 } },
-          }}
+      <div className="relative z-10 mx-auto w-full max-w-page">
+        <motion.h2
           {...inViewProps}
-          className="grid grid-cols-1 items-start gap-x-7 gap-y-8 md:grid-cols-3 md:pb-10"
+          variants={fadeUp}
+          className="text-center font-serif text-[38px] font-medium leading-[1.08] tracking-heading text-ink sm:text-[48px] md:text-[56px]"
         >
-          {quotes.map((quote, index) => (
-            <motion.figure
+          Hear it from the Community
+        </motion.h2>
+
+        <div className="mt-14 grid grid-cols-1 items-stretch gap-6 sm:mt-16 md:grid-cols-3 md:gap-8">
+          {quotes.map((quote) => (
+            <figure
               key={quote.source}
-              variants={bubbleVariants}
-              className={`relative flex flex-col rounded-[24px] border border-stone bg-bone p-6 sm:p-7 ${
-                index === 1 ? 'md:mt-10' : index === 2 ? 'md:mt-4' : ''
-              }`}
+              className="flex min-h-[300px] flex-col rounded-[12px] bg-white/90 px-7 py-8 shadow-[0_0_0_1px_rgba(36,36,36,0.04)] backdrop-blur-[1px] sm:min-h-[320px] sm:p-9"
             >
-              <blockquote className="mb-6 font-editorial text-[19px] italic leading-[1.5] text-ink sm:text-[20px]">
+              <blockquote className="font-editorial text-[18px] italic leading-[1.65] text-ink sm:text-[19px]">
                 &ldquo;{quote.text}&rdquo;
               </blockquote>
-              <figcaption className="mono-tag mt-auto">{quote.source}</figcaption>
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute -bottom-[9px] left-8 h-4 w-4 rotate-45 border-b border-r border-stone bg-bone"
-              />
-            </motion.figure>
+              <figcaption className="mt-auto pt-8 font-editorial text-[15px] leading-[1.4] text-ink/70">
+                — {quote.source}
+              </figcaption>
+            </figure>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

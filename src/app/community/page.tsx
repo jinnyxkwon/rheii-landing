@@ -1,17 +1,15 @@
 /**
  * Community Page
  *
- * The Community page for The Rheii, showcasing the vision for offline gatherings.
+ * The Community page for Rheii.
  *
  * Features:
  * - Navigation bar (same as landing page)
- * - Community section with decorative elements and centered content
- * - "Coming Soon" message for future community features
+ * - Community statement and product imagery
  */
 
 import Navigation from '@/components/landing/Navigation';
 import CommunitySection from '@/components/community/CommunitySection';
-import EventsSection from '@/components/community/EventsSection';
 import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function CommunityPage() {
@@ -19,9 +17,6 @@ export default function CommunityPage() {
     <main className="min-h-screen bg-parchment">
       {/* Navigation */}
       <Navigation />
-
-      {/* Events Section */}
-      <EventsSection />
 
       {/* Community Section */}
       <CommunitySection />
