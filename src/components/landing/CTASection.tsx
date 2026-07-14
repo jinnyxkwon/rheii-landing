@@ -72,8 +72,8 @@ export default function CTASection() {
         >
           <div className="relative w-full h-full">
             <Image
-              src="/images/home/Rheii.png"
-              alt="Rheii tote bag"
+              src="/images/landing/community wallpaper.jpg"
+              alt="Community wallpaper"
               fill
               className="object-cover"
               priority
