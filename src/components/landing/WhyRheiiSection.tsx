@@ -22,20 +22,6 @@ interface Quote {
   source: string;
 }
 
-const stickerImages = [
-  { src: '/images/landing/feedback 1.jpg', alt: 'Feedback 1', w: 260, h: 320 },
-  { src: '/images/landing/community 1.png', alt: 'Community 1', w: 280, h: 280 },
-  { src: '/images/landing/feedback 2.jpg', alt: 'Feedback 2', w: 240, h: 300 },
-  { src: '/images/landing/feedback 3.jpg', alt: 'Feedback 3', w: 250, h: 310 },
-];
-
-const stickerPositions = [
-  { left: '2%',  top: '5%',  rotate: 0 },
-  { left: '25%', top: '45%', rotate: 5 },
-  { left: '48%', top: '8%',  rotate: 0 },
-  { left: '72%', top: '15%', rotate: 0 },
-];
-
 const quotes: Quote[] = [
   {
     text: "It helped me get through some of my looped thinking around things like career and hobbies. The questions the system asks are really intuitive and guide you through thoughts that are honestly helpful to sit with.",
@@ -157,41 +143,6 @@ export default function WhyRheiiSection() {
             Hear it from the Community
           </h2>
         </motion.div>
-
-        {/* Floating Sticker Images */}
-        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] mb-16 md:mb-24">
-          {stickerImages.map((img, index) => {
-            const pos = stickerPositions[index];
-            return (
-              <motion.div
-                key={index}
-                className="absolute"
-                style={{
-                  left: pos.left,
-                  top: pos.top,
-                  width: `${img.w}px`,
-                }}
-                animate={{
-                  y: [0, -8 - (index % 3) * 4, 0, 6 + (index % 2) * 3, 0],
-                  ...(img.src.includes('community') ? { rotate: [pos.rotate, pos.rotate - 1.5, pos.rotate, pos.rotate + 1.5, pos.rotate] } : {}),
-                }}
-                transition={{
-                  duration: 4 + index * 0.7,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.w}
-                  height={img.h}
-                  className={`w-full h-auto ${img.src.includes('community') ? '' : 'rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.18)]'}`}
-                />
-              </motion.div>
-            );
-          })}
-        </div>
 
         {/* Quotes Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
