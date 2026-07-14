@@ -25,7 +25,7 @@ export default function FeedbackSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/home/Community BG.png"
+          src="/images/landing/community section bg.jpg"
           alt="Community background"
           fill
           className="object-cover"
