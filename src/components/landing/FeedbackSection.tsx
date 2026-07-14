@@ -62,20 +62,22 @@ export default function FeedbackSection() {
                 left: pos.left,
                 top: pos.top,
               }}
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              animate={{
-                y: [0, -14, 0, 10, 0],
-                rotate: [pos.rotate, pos.rotate - 1.5, pos.rotate, pos.rotate + 1.5, pos.rotate],
-              }}
-              transition={{
-                duration: 5 + index,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: index * 0.15,
-              }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
+              <motion.div
+                animate={{
+                  y: [0, -10, 0, 6, 0],
+                  rotate: [pos.rotate, pos.rotate - 1, pos.rotate, pos.rotate + 1, pos.rotate],
+                }}
+                transition={{
+                  duration: 4 + index,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              >
                 <Image
                   src={img.src}
                   alt={img.alt}
@@ -83,6 +85,7 @@ export default function FeedbackSection() {
                   height={img.height}
                   className="w-full h-auto"
                 />
+              </motion.div>
             </motion.div>
           );
         })}
