@@ -1,21 +1,16 @@
 /**
- * Why Rheii Section Component - Community Testimonials
+ * Why Rheii Section — community testimonials
  *
- * Section featuring community quotes with background image
- * - Heading "Hear it from the Community"
- * - Three testimonial cards overlaid on background image
- *
- * Design: Updated to showcase community quotes
- * Colors: Dark overlay with white text
- * Typography: Roboto Serif (H2), DM Sans (Body)
- * Fully responsive
+ * A close adaptation of the original website: one softly washed community
+ * photo, a centered serif heading, and three aligned testimonial cards.
  */
 
 'use client';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { fadeUp, inViewProps } from '@/lib/motion';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 
 interface Quote {
   text: string;
@@ -24,150 +19,53 @@ interface Quote {
 
 const quotes: Quote[] = [
   {
-    text: "It helped me get through some of my looped thinking around things like career and hobbies. The questions the system asks are really intuitive and guide you through thoughts that are honestly helpful to sit with.",
-    source: "Sam, Singapore"
+    text: 'It helped me get through some of my looped thinking around things like career and hobbies. The questions the system asks are really intuitive and guide you through thoughts that are honestly helpful to sit with.',
+    source: 'Sam, Singapore',
   },
   {
-    text: "It felt cathartic to have somewhere to dump big feelings in the moment.",
-    source: "Dave, United Kingdom"
+    text: 'It felt cathartic to have somewhere to dump big feelings in the moment.',
+    source: 'Dave, United Kingdom',
   },
   {
-    text: "Overall, I think this is amazing. It really helped prompt me to think more deeply and become more aware of things I hadn't really thought of. The support cards have made my weekends feel more exciting. I've been pushing myself outside my comfort zone.",
-    source: "Jane, Singapore"
-  }
+    text: "Overall, I think this is amazing. It really helped prompt me to think more deeply and become more aware of things I hadn't thought of. The support cards have made my weekends feel more exciting — I've been pushing myself outside my comfort zone.",
+    source: 'Jane, Singapore',
+  },
 ];
 
 export default function WhyRheiiSection() {
-  const containerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const createSparkle = (x: number, y: number, size: number, delay: number) => {
-      const sparkleEl = document.createElement('div');
-      sparkleEl.style.position = 'absolute';
-      sparkleEl.style.left = `${x}px`;
-      sparkleEl.style.top = `${y}px`;
-      sparkleEl.style.pointerEvents = 'none';
-      sparkleEl.style.width = `${size}px`;
-      sparkleEl.style.height = `${size}px`;
-      sparkleEl.style.transform = 'translate(-50%, -50%)';
-      sparkleEl.style.background = 'radial-gradient(circle, rgba(64, 14, 26, 1) 0%, rgba(92, 20, 33, 0.95) 30%, rgba(92, 20, 33, 0.65) 55%, transparent 100%)';
-      sparkleEl.style.borderRadius = '50%';
-      sparkleEl.style.boxShadow = '0 0 18px rgba(92, 20, 33, 0.95), 0 0 40px rgba(64, 14, 26, 0.9)';
-      sparkleEl.style.opacity = '0';
-      sparkleEl.style.zIndex = '30';
-      sparkleEl.style.mixBlendMode = 'screen';
-
-      container.appendChild(sparkleEl);
-
-      const startTime = Date.now();
-      const duration = 600;
-      const driftX = Math.random() * 24 - 12;
-      const driftY = Math.random() * 28 + 10;
-      const rotation = Math.random() * 180 - 90;
-
-      const animate = () => {
-        const elapsed = Date.now() - startTime - delay;
-        if (elapsed < 0) {
-          requestAnimationFrame(animate);
-          return;
-        }
-
-        const progress = Math.min(elapsed / duration, 1);
-        sparkleEl.style.opacity = `${Math.max(1 - progress * 1.4, 0)}`;
-        sparkleEl.style.transform = `translate(calc(-50% + ${driftX * progress}px), calc(-50% + ${driftY * progress}px)) rotate(${rotation * progress}deg) scale(${1 - progress * 0.45})`;
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          sparkleEl.remove();
-        }
-      };
-
-      setTimeout(() => animate(), delay);
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
-      const baseX = e.clientX - rect.left;
-      const baseY = e.clientY - rect.top;
-
-      for (let i = 0; i < 6; i += 1) {
-        const offsetX = Math.random() * 16 - 8;
-        const offsetY = Math.random() * 16 - 8;
-        const size = Math.random() < 0.7 ? 6 : 10;
-        const delay = Math.random() * 120;
-        createSparkle(baseX + offsetX, baseY + offsetY, size, delay);
-      }
-    };
-
-    container.addEventListener('mousemove', handleMouseMove);
-    return () => container.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
-    <section
-      ref={containerRef}
-      className="relative w-full min-h-screen overflow-hidden"
-      style={{
-        backgroundColor: '#f5f5f5',
-      }}
-    >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/home/Community BG.png"
-          alt="Community background"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+    <section className="relative isolate min-h-[640px] w-full overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 md:px-[104px] md:py-20">
+      <Image
+        src={WEBSITE_ASSETS.communityBackground}
+        alt=""
+        fill
+        sizes="100vw"
+        className="-z-20 select-none object-cover object-center"
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-white/75" />
 
-      {/* Content Container */}
-      <div className="relative z-10 px-5 sm:px-8 md:px-[7vw] py-12 sm:py-16 md:py-24">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 md:mb-24 text-center"
+      <div className="relative z-10 mx-auto w-full max-w-page">
+        <motion.h2
+          {...inViewProps}
+          variants={fadeUp}
+          className="text-center font-serif text-[38px] font-medium leading-[1.08] tracking-heading text-ink sm:text-[48px] md:text-[56px]"
         >
-          <h2
-            className="font-heading font-light text-[32px] sm:text-[40px] md:text-[48px] leading-[42px] sm:leading-[52px] md:leading-[60px] tracking-[-0.8px] text-black"
-            style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
-          >
-            Hear it from the Community
-          </h2>
-        </motion.div>
+          Hear it from the Community
+        </motion.h2>
 
-        {/* Quotes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-          {quotes.map((quote, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="flex flex-col justify-start p-8 bg-white/70 backdrop-blur-lg rounded-lg border border-white/60"
+        <div className="mt-14 grid grid-cols-1 items-stretch gap-6 sm:mt-16 md:grid-cols-3 md:gap-8">
+          {quotes.map((quote) => (
+            <figure
+              key={quote.source}
+              className="flex min-h-[300px] flex-col rounded-[12px] bg-white/90 px-7 py-8 shadow-[0_0_0_1px_rgba(36,36,36,0.04)] backdrop-blur-[1px] sm:min-h-[320px] sm:p-9"
             >
-              {/* Quote Text */}
-              <p
-                className="font-body font-normal text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] text-black italic mb-6"
-                style={{ fontVariationSettings: "'opsz' 14" }}
-              >
-                "{quote.text}"
-              </p>
-
-              {/* Quote Source */}
-              <p className="font-body font-normal text-[14px] leading-[20px] text-black/80">
+              <blockquote className="font-editorial text-[18px] italic leading-[1.65] text-ink sm:text-[19px]">
+                &ldquo;{quote.text}&rdquo;
+              </blockquote>
+              <figcaption className="mt-auto pt-8 font-editorial text-[15px] leading-[1.4] text-ink/70">
                 — {quote.source}
-              </p>
-            </motion.div>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>

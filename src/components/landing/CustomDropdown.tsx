@@ -59,29 +59,26 @@ export default function CustomDropdown({
         type="button"
         id={id}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full h-[44px] px-[16px] py-[8px] border border-[#c6c2be] rounded-[4px] bg-white flex items-center justify-between focus:outline-none focus:border-rheti-primary-500 transition-colors"
+        className="w-full h-[46px] px-[14px] border border-stone rounded bg-parchment flex items-center justify-between focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/40 transition-colors"
       >
         <span
-          className={`font-body text-[15px] sm:text-[16px] leading-[24px] ${
-            value ? 'text-rheti-neutral-600' : 'text-[#9e9c9a]'
+          className={`font-sans text-[15px] sm:text-[16px] ${
+            value ? 'text-ink' : 'text-mist'
           }`}
-          style={{
-            fontVariationSettings: "'opsz' 14",
-          }}
         >
           {selectedOption ? selectedOption.label : placeholder}
         </span>
         {isOpen ? (
-          <ChevronUp size={16} className="text-[#8c8c8c]" />
+          <ChevronUp size={16} className="text-ash" />
         ) : (
-          <ChevronDown size={16} className="text-[#8c8c8c]" />
+          <ChevronDown size={16} className="text-ash" />
         )}
       </button>
 
       {/* Dropdown List */}
       {isOpen && (
-        <div className="absolute z-10 w-full mt-[8px] bg-white border border-[#d9d9d9] rounded-[4px] shadow-[0px_4px_16px_0px_rgba(165,165,165,0.16)] overflow-hidden">
-          <div className="py-[8px]">
+        <div className="absolute z-10 w-full mt-[8px] bg-parchment border border-stone rounded overflow-hidden">
+          <div className="py-[6px]">
             {options.map((option) => (
               <button
                 key={option.value}
@@ -90,28 +87,23 @@ export default function CustomDropdown({
                   onChange(option.value);
                   setIsOpen(false);
                 }}
-                className="w-full h-[44px] px-[16px] flex items-center gap-[8px] hover:bg-[#fafafa] transition-colors"
+                className="w-full h-[44px] px-[14px] flex items-center gap-[10px] hover:bg-bone transition-colors"
               >
                 {/* Radio Button */}
                 <div className="flex items-center justify-center w-[20px] h-[20px]">
                   <div
-                    className={`w-[20px] h-[20px] rounded-full border-2 flex items-center justify-center ${
-                      value === option.value ? 'border-rheti-primary-500' : 'border-[#d9d9d9]'
+                    className={`w-[18px] h-[18px] rounded-full border flex items-center justify-center ${
+                      value === option.value ? 'border-clay' : 'border-stone'
                     }`}
                   >
                     {value === option.value && (
-                      <div className="w-[10px] h-[10px] rounded-full bg-rheti-primary-500" />
+                      <div className="w-[9px] h-[9px] rounded-full bg-clay" />
                     )}
                   </div>
                 </div>
 
                 {/* Option Label */}
-                <span
-                  className="font-body text-[15px] sm:text-[16px] leading-[24px] text-[#262626]"
-                  style={{
-                    fontVariationSettings: "'opsz' 14",
-                  }}
-                >
+                <span className="font-sans text-[15px] sm:text-[16px] text-ink/90">
                   {option.label}
                 </span>
               </button>

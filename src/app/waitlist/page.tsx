@@ -13,15 +13,16 @@
 import Navigation from '@/components/landing/Navigation';
 import WaitlistForm from '@/components/landing/WaitlistForm';
 import LandingFooter from '@/components/landing/LandingFooter';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 
 export default function WaitlistPage() {
   return (
-    <main className="min-h-screen bg-[#fffdfa] flex flex-col relative">
+    <main className="min-h-screen bg-parchment flex flex-col relative">
       {/* Background Image */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none opacity-40"
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none opacity-[0.08]"
         style={{
-          backgroundImage: 'url(/images/landing/waitlist%20bg.png)',
+          backgroundImage: `url(${WEBSITE_ASSETS.product.lifeInMotion})`,
         }}
       />
 

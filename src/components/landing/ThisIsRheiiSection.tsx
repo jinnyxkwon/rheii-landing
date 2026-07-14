@@ -1,128 +1,120 @@
 /**
- * This Is Rheii Section Component
+ * This Is Rheii Section — editorial redesign
  *
- * Section introducing the Rheii app featuring:
- * - Title with "Dump your thoughts and let Rheii handle the rest..."
- * - Three feature cards with images and descriptions
- *
- * Design: Updated to show three pillar features
- * Colors: Light background (#EFEFEE or similar)
- * Typography: Roboto Serif for heading, DM Sans for body
- * Fully responsive with grid layout
+ * The three-pillar feature block. Flat bone cards with hairline borders, mono
+ * index tags (01 / 02 / 03), and paper-elevated product images. Motion is a
+ * single quick reveal per Geist's guidance — no per-character animation.
  */
 
 'use client';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { fadeUp, staggerParent, inViewProps } from '@/lib/motion';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
+
+const cards = [
+  {
+    image: WEBSITE_ASSETS.product.recurringThemes,
+    imageClassName: 'object-cover object-top',
+    title: 'Recurring Themes',
+    description: "See the themes you keep returning to, and what they're telling you.",
+  },
+  {
+    image: WEBSITE_ASSETS.product.lifeInMotion,
+    imageClassName: '',
+    title: 'Your Life in Motion',
+    description:
+      'As you navigate through life, see where things are growing, easing, or demanding your attention.',
+    moving: true,
+  },
+  {
+    image: WEBSITE_ASSETS.themeCards.selfIdentity,
+    imageClassName: 'object-contain p-3',
+    title: 'Support System',
+    description:
+      'Receive personalized suggestions and set intentions that resonate. Start building the habits that actually stick.',
+  },
+];
+
+function LifeInMotionVisual() {
+  return (
+    <div
+      role="img"
+      aria-label="Rheii Life in Motion cards moving continuously across the frame"
+      className="relative h-full w-full overflow-hidden"
+    >
+      <div className="life-motion-track flex h-full w-max will-change-transform">
+        {[0, 1].map((copyIndex) => (
+          <Image
+            key={copyIndex}
+            src={WEBSITE_ASSETS.product.lifeInMotion}
+            alt=""
+            aria-hidden="true"
+            width={3253}
+            height={1762}
+            className="h-full w-auto max-w-none shrink-0"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function ThisIsRheiiSection() {
-  const cards = [
-    {
-      image: '/images/home/Recurring themes.png',
-      title: 'Recurring Themes',
-      description: 'See the themes you keep returning to, and what they\'re telling you.'
-    },
-    {
-      image: '/images/home/Life in Motion.png',
-      title: 'Your Life in Motion',
-      description: 'As you navigate through life, see where things are growing, easing, or demanding your attention.'
-    },
-    {
-      image: '/images/home/Support Cards.png',
-      title: 'Support System',
-      description: 'Receive personalized suggestion and set intentions that resonate. Start building the habits that actually stick.'
-    }
-  ];
-
   return (
-    <section
-      className="relative w-full min-h-screen overflow-hidden"
-      style={{
-        backgroundColor: '#EFEFEE',
-        margin: 0,
-        padding: 0,
-        display: 'block',
-        position: 'relative',
-      }}
-    >
-      {/* Content Container */}
-      <div className="relative z-10 px-5 sm:px-8 md:px-[7vw] py-12 sm:py-16 md:py-24">
-        {/* Title Section */}
-        <div
-          className="max-w-[600px] mb-16 md:mb-20"
-        >
+    <section className="relative w-full overflow-hidden bg-parchment">
+      <div className="relative z-10 mx-auto w-full max-w-page px-5 py-16 sm:px-8 sm:py-20 md:px-[104px] md:py-28">
+        {/* Header */}
+        <div className="max-w-[640px] mb-14 md:mb-20">
           <motion.h2
-            className="font-heading font-normal text-[28px] sm:text-[34px] md:text-[42px] leading-[36px] sm:leading-[42px] md:leading-[52px] tracking-[-0.8px] text-black"
-            style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            {...inViewProps}
+            variants={fadeUp}
+            className="font-serif font-medium text-[30px] sm:text-[38px] md:text-[46px] leading-[1.14] tracking-heading text-ink"
           >
-            {['Dump your thoughts and let ', 'Rheii', ' handle the rest...'].map((text, idx) => (
-              <span key={idx}>
-                {text.split('').map((char, charIdx) => (
-                  <motion.span
-                    key={charIdx}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.03,
-                      delay: (idx === 0 ? charIdx : idx === 1 ? text.length + charIdx + 20 : text.length + charIdx + 24) * 0.03,
-                    }}
-                    className={idx === 1 ? 'text-rheti-primary-500' : ''}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </span>
-            ))}
+            Dump your thoughts and let <span className="italic text-clay">Rheii</span> handle the
+            rest.
           </motion.h2>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
+        {/* Features — set directly on the page, no cards */}
+        <motion.div
+          variants={staggerParent(0.08)}
+          {...inViewProps}
+          className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-14"
+        >
           {cards.map((card, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="flex flex-col items-center text-center"
+              key={card.title}
+              variants={{
+                hidden: { opacity: 0, scale: 0.97, y: 8 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  transition: { duration: 0.24, ease: [0.215, 0.61, 0.355, 1] },
+                },
+              }}
+              className="flex flex-col"
             >
-              {/* Card Image */}
-              <div className="w-full mb-6 rounded-2xl overflow-hidden max-w-[340px]">
-                <div className="relative w-full aspect-square bg-gray-200">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+              <div className="relative w-full aspect-[4/3] mb-6 rounded-[12px] overflow-hidden bg-bone">
+                {card.moving ? (
+                  <LifeInMotionVisual />
+                ) : (
+                  <Image src={card.image} alt={card.title} fill className={card.imageClassName} />
+                )}
               </div>
 
-              {/* Card Title */}
-              <h3
-                className="font-heading font-normal text-[22px] sm:text-[24px] leading-[32px] sm:leading-[36px] text-black mb-4"
-                style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
-              >
+              <p className="mono-tag mb-[10px]">{String(index + 1).padStart(2, '0')}</p>
+              <h3 className="font-serif font-medium text-[25px] leading-[1.2] tracking-tight-sm text-ink mb-[8px]">
                 {card.title}
               </h3>
-
-              {/* Card Description */}
-              <p
-                className="font-body font-normal text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-gray-600"
-                style={{ fontVariationSettings: "'opsz' 14" }}
-              >
+              <p className="font-editorial text-[17px] leading-[1.5] text-ash max-w-[340px]">
                 {card.description}
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

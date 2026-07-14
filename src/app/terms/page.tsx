@@ -16,36 +16,24 @@ import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function TermsOfUsePage() {
   return (
-    <main className="min-h-screen bg-[#edebe9]">
+    <main className="min-h-screen bg-parchment">
       {/* Navigation */}
       <Navigation />
 
       {/* Content */}
-      <div className="max-w-[604px] mx-auto px-4 pt-[160px] pb-[80px]">
+      <div className="max-w-[640px] mx-auto px-5 sm:px-4 pt-[160px] pb-[80px]">
         {/* Header */}
-        <div className="flex flex-col gap-[8px] mb-[48px]">
-          <h1
-            className="font-heading font-medium text-[30px] leading-[40px] tracking-[-0.9px] text-rheti-neutral-600"
-            style={{
-              fontVariationSettings: "'GRAD' 0, 'wdth' 100",
-            }}
-          >
+        <div className="flex flex-col gap-[10px] mb-[48px] pb-[32px] border-b border-stone">
+          <h1 className="font-serif font-medium text-[36px] leading-[1.1] tracking-heading text-ink">
             Terms of Service
           </h1>
-          <p
-            className="font-body text-[18px] leading-[27px] text-[#322d29]"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
-          >
-            Last Updated: December 2025
-          </p>
+          <p className="mono-tag mt-[8px]">Last updated December 2025</p>
         </div>
 
         {/* 1. Acceptance of These Terms */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -81,7 +69,7 @@ export default function TermsOfUsePage() {
         {/* 2. Use of Services */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -125,7 +113,7 @@ export default function TermsOfUsePage() {
         {/* 3. Eligibility and Accounts */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -167,7 +155,7 @@ export default function TermsOfUsePage() {
         {/* 4. Privacy */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -198,7 +186,7 @@ export default function TermsOfUsePage() {
         {/* 5. Exports and Sharing */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -231,7 +219,7 @@ export default function TermsOfUsePage() {
         {/* 6. Independent Professionals */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -263,7 +251,7 @@ export default function TermsOfUsePage() {
         {/* 7. License and Acceptable Use */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -295,7 +283,7 @@ export default function TermsOfUsePage() {
         {/* 8. Intellectual Property */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -330,7 +318,7 @@ export default function TermsOfUsePage() {
         {/* 9. Subscriptions, Trials, Billing, and Renewals */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -361,7 +349,7 @@ export default function TermsOfUsePage() {
         {/* 10. Third-Party Terms and AI Providers */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -389,7 +377,7 @@ export default function TermsOfUsePage() {
         {/* 11. Changes */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -411,7 +399,7 @@ export default function TermsOfUsePage() {
         {/* 12. Disclaimers */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -443,7 +431,7 @@ export default function TermsOfUsePage() {
         {/* 13. Limitation of Liability */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -473,7 +461,7 @@ export default function TermsOfUsePage() {
         {/* 14. Indemnification */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -499,7 +487,7 @@ export default function TermsOfUsePage() {
         {/* 15. Dispute Resolution and Arbitration */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -526,7 +514,7 @@ export default function TermsOfUsePage() {
         {/* 16. Termination */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -550,7 +538,7 @@ export default function TermsOfUsePage() {
         {/* 17. Miscellaneous */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -578,7 +566,7 @@ export default function TermsOfUsePage() {
         {/* 18. Contact */}
         <section className="flex flex-col gap-[20px] mb-[48px]">
           <h2
-            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            className="font-serif font-medium text-[23px] leading-[30px] text-[#322d29]"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}

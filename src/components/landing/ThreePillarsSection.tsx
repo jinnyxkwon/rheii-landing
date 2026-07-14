@@ -21,6 +21,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+import { WEBSITE_ASSETS } from '@/lib/websiteAssets';
 
 interface PillarCardProps {
   number: string;
@@ -139,19 +140,19 @@ export default function ThreePillarsSection() {
           <PillarCard
             number="1"
             title="Personalized"
-            // imageSrc="/images/landing/pillar-personalized.jpg"
+            imageSrc={WEBSITE_ASSETS.product.recurringThemes}
             delay={0.2}
           />
           <PillarCard
             number="2"
             title="Social"
-            // imageSrc="/images/landing/pillar-social.jpg"
+            imageSrc={WEBSITE_ASSETS.themeCards.validation}
             delay={0.4}
           />
           <PillarCard
             number="3"
             title="Community"
-            imageSrc="/images/landing/social%20card.png"
+            imageSrc={WEBSITE_ASSETS.themeCards.relationships}
             delay={0.6}
           />
         </div>

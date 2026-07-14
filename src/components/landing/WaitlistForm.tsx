@@ -101,42 +101,30 @@ export default function WaitlistForm() {
 
   if (isSubmitted) {
     return (
-      <div className="w-full max-w-[604px] mx-auto bg-[#F7F1ED] rounded-[16px] p-6 sm:p-[48px] shadow-lg">
+      <div className="w-full max-w-[560px] mx-auto">
         <div className="flex flex-col items-center text-center gap-[24px]">
           {/* Success Icon */}
-          <div className="flex items-center justify-center w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] rounded-full bg-rheti-primary-100">
-            <Check size={32} className="text-rheti-primary-500" strokeWidth={2.5} />
+          <div className="flex items-center justify-center w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] rounded-[16px] bg-linen">
+            <Check size={32} className="text-clay" strokeWidth={2} />
           </div>
 
           {/* Success Message */}
-          <div className="flex flex-col gap-[8px]">
-            <h2
-              className="font-heading font-medium text-[24px] sm:text-[30px] leading-[32px] sm:leading-[40px] tracking-[-0.9px] text-rheti-neutral-600"
-              style={{
-                fontVariationSettings: "'GRAD' 0, 'wdth' 100",
-              }}
-            >
-              You're on the list!
+          <div className="flex flex-col gap-[10px]">
+            <h2 className="font-serif font-medium text-[26px] sm:text-[32px] leading-[1.15] tracking-heading text-ink">
+              You&apos;re on the{' '}
+              <span className="font-editorial italic font-medium text-clay">list.</span>
             </h2>
-            <p
-              className="font-body text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-[#262626]"
-              style={{
-                fontVariationSettings: "'opsz' 14",
-              }}
-            >
-              Thank you for joining the waitlist. We'll send you an email when Rheii launches.
+            <p className="font-sans text-[15px] sm:text-[16px] leading-[1.55] text-ash">
+              Thank you for joining the waitlist. We&apos;ll send you an email when Rheii launches.
             </p>
           </div>
 
           {/* Return to Home Button */}
           <button
             onClick={() => (window.location.href = '/')}
-            className="mt-[16px] h-[48px] px-[28px] py-[12px] bg-rheti-primary-500 rounded-[100px] font-body font-semibold text-[15px] sm:text-[16px] leading-[24px] text-white hover:bg-rheti-primary-600 transition-colors"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
+            className="mt-[16px] h-[46px] px-[24px] bg-clay rounded font-sans text-[15px] sm:text-[16px] text-parchment hover:bg-[#5f2d33] transition-colors duration-150 ease-editorial"
           >
-            Return to Home
+            Return home
           </button>
         </div>
       </div>
@@ -144,26 +132,18 @@ export default function WaitlistForm() {
   }
 
   return (
-    <div className="w-full max-w-[604px] mx-auto bg-[#F7F1ED] rounded-[16px] p-6 sm:p-[48px] shadow-lg">
+    <div className="w-full max-w-[560px] mx-auto">
       {/* Heading */}
-      <div className="flex flex-col gap-[8px] items-center text-center mb-[24px] sm:mb-[32px]">
-        <h1
-          className="font-heading font-medium text-[24px] sm:text-[30px] leading-[32px] sm:leading-[40px] tracking-[-0.9px] text-rheti-neutral-600"
-          style={{
-            fontVariationSettings: "'GRAD' 0, 'wdth' 100",
-          }}
-        >
-          Join the Waitlist
+      <div className="flex flex-col gap-[10px] items-center text-center mb-[28px] sm:mb-[36px]">
+        <h1 className="font-serif font-medium text-[26px] sm:text-[32px] leading-[1.15] tracking-heading text-ink">
+          Join the <span className="font-editorial italic font-medium text-clay">waitlist</span>
         </h1>
-        <p
-          className="font-body text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-[#262626]"
-          style={{
-            fontVariationSettings: "'opsz' 14",
-          }}
-        >
-          Join other members who are navigating life from the inside out.
-          <br />
-          We'll be hosting more <a href="https://www.rheii.com/community" className="underline hover:opacity-70 transition-opacity">IRL events</a>. RSVP to get access to our beta and beat the waitlist.
+        <p className="font-sans text-[15px] sm:text-[16px] leading-[1.55] text-ash max-w-[440px]">
+          Join other members who are navigating life from the inside out. We&apos;ll be hosting more{' '}
+          <a href="https://www.rheii.com/community" className="link-accent">
+            IRL events
+          </a>
+          . RSVP to get access to our beta and beat the waitlist.
         </p>
       </div>
 
@@ -171,8 +151,8 @@ export default function WaitlistForm() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-[20px] sm:gap-[24px]">
         {/* Error Message */}
         {error && (
-          <div className="px-[16px] py-[12px] bg-red-50 border border-red-200 rounded-[4px]">
-            <p className="font-body text-[14px] leading-[20px] text-red-600">{error}</p>
+          <div className="px-[16px] py-[12px] bg-[#f6ece9] border border-[#e0c3bb] rounded">
+            <p className="font-sans text-[14px] leading-[20px] text-clay">{error}</p>
           </div>
         )}
 
@@ -181,7 +161,7 @@ export default function WaitlistForm() {
           <div className="flex-1 flex flex-col gap-[8px]">
             <label
               htmlFor="firstName"
-              className="font-body font-semibold text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-rheti-neutral-600"
+              className="font-sans font-medium text-[14px] sm:text-[15px] leading-[1.4] text-ink"
               style={{
                 fontVariationSettings: "'opsz' 14",
               }}
@@ -194,7 +174,7 @@ export default function WaitlistForm() {
               value={formData.firstName}
               onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
               required
-              className="h-[44px] px-[16px] py-[8px] border border-[#d9d9d9] rounded-[4px] font-body text-[15px] sm:text-[16px] leading-[24px] text-rheti-neutral-600 focus:outline-none focus:border-rheti-primary-500"
+              className="h-[46px] px-[14px] border border-stone rounded bg-parchment font-sans text-[15px] sm:text-[16px] text-ink placeholder:text-mist focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/40 transition-colors"
               style={{
                 fontVariationSettings: "'opsz' 14",
               }}
@@ -203,7 +183,7 @@ export default function WaitlistForm() {
           <div className="flex-1 flex flex-col gap-[8px]">
             <label
               htmlFor="lastName"
-              className="font-body font-semibold text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-rheti-neutral-600"
+              className="font-sans font-medium text-[14px] sm:text-[15px] leading-[1.4] text-ink"
               style={{
                 fontVariationSettings: "'opsz' 14",
               }}
@@ -216,7 +196,7 @@ export default function WaitlistForm() {
               value={formData.lastName}
               onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
               required
-              className="h-[44px] px-[16px] py-[8px] border border-[#d9d9d9] rounded-[4px] font-body text-[15px] sm:text-[16px] leading-[24px] text-rheti-neutral-600 focus:outline-none focus:border-rheti-primary-500"
+              className="h-[46px] px-[14px] border border-stone rounded bg-parchment font-sans text-[15px] sm:text-[16px] text-ink placeholder:text-mist focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/40 transition-colors"
               style={{
                 fontVariationSettings: "'opsz' 14",
               }}
@@ -228,10 +208,7 @@ export default function WaitlistForm() {
         <div className="flex flex-col gap-[8px]">
           <label
             htmlFor="email"
-            className="font-body font-semibold text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-rheti-neutral-600"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
+            className="font-sans font-medium text-[14px] sm:text-[15px] leading-[1.4] text-ink"
           >
             Email
           </label>
@@ -241,10 +218,7 @@ export default function WaitlistForm() {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
-            className="h-[44px] px-[16px] py-[8px] border border-[#d9d9d9] rounded-[4px] font-body text-[15px] sm:text-[16px] leading-[24px] text-rheti-neutral-600 focus:outline-none focus:border-rheti-primary-500"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
+            className="h-[46px] px-[14px] border border-stone rounded bg-parchment font-sans text-[15px] sm:text-[16px] text-ink placeholder:text-mist focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/40 transition-colors"
           />
         </div>
 
@@ -252,19 +226,11 @@ export default function WaitlistForm() {
         <div className="flex flex-col gap-[8px]">
           <label
             htmlFor="growthJourney"
-            className="font-body font-semibold text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-rheti-neutral-600"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
+            className="font-sans font-medium text-[14px] sm:text-[15px] leading-[1.4] text-ink"
           >
             What matters most to you on in your growth journey?
             <br />
-            <span
-              className="font-body font-normal text-[#5e5a57]"
-              style={{
-                fontVariationSettings: "'opsz' 14",
-              }}
-            >
+            <span className="font-serif font-medium text-ash">
               (e.g. self reflection, tracking progress, supportive network, etc.)
             </span>
           </label>
@@ -273,7 +239,7 @@ export default function WaitlistForm() {
             value={formData.growthJourney}
             onChange={(e) => setFormData({ ...formData, growthJourney: e.target.value })}
             rows={2}
-            className="px-[16px] py-[8px] border border-[#d9d9d9] rounded-[4px] font-body text-[15px] sm:text-[16px] leading-[24px] text-rheti-neutral-600 focus:outline-none focus:border-rheti-primary-500 resize-none"
+            className="px-[14px] py-[10px] border border-stone rounded bg-parchment font-sans text-[15px] sm:text-[16px] leading-[1.5] text-ink placeholder:text-mist focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/40 resize-none transition-colors"
             style={{
               fontVariationSettings: "'opsz' 14",
             }}
@@ -283,27 +249,21 @@ export default function WaitlistForm() {
         {/* Life Season Checkboxes */}
         <div className="flex flex-col gap-[8px]">
           <label
-            className="font-body font-semibold text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-rheti-neutral-600"
+            className="font-sans font-medium text-[14px] sm:text-[15px] leading-[1.4] text-ink"
             style={{ fontVariationSettings: "'opsz' 14" }}
           >
             What season of life are you in right now?
           </label>
           <div className="flex flex-col gap-[12px] mt-[4px]">
             {lifeSeasonOptions.map((option) => (
-              <label
-                key={option.value}
-                className="flex items-center gap-[12px] cursor-pointer"
-              >
+              <label key={option.value} className="flex items-center gap-[12px] cursor-pointer">
                 <input
                   type="checkbox"
                   checked={formData.lifeSeasons.includes(option.value)}
                   onChange={() => toggleLifeSeason(option.value)}
-                  className="w-[18px] h-[18px] rounded-[4px] border border-[#d9d9d9] accent-rheti-primary-500 cursor-pointer flex-shrink-0"
+                  className="w-[18px] h-[18px] rounded border border-stone accent-clay cursor-pointer flex-shrink-0"
                 />
-                <span
-                  className="font-body text-[14px] sm:text-[15px] leading-[22px] text-rheti-neutral-600"
-                  style={{ fontVariationSettings: "'opsz' 14" }}
-                >
+                <span className="font-sans text-[14px] sm:text-[15px] leading-[1.4] text-ink/90">
                   {option.label}
                 </span>
               </label>
@@ -315,10 +275,7 @@ export default function WaitlistForm() {
         <div className="flex flex-col gap-[8px]">
           <label
             htmlFor="referralSource"
-            className="font-body font-semibold text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-rheti-neutral-600"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
+            className="font-sans font-medium text-[14px] sm:text-[15px] leading-[1.4] text-ink"
           >
             Where did you hear about us?
           </label>
@@ -336,7 +293,7 @@ export default function WaitlistForm() {
           <div className="flex flex-col gap-[8px]">
             <label
               htmlFor="referralSourceOther"
-              className="font-body font-semibold text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] text-rheti-neutral-600"
+              className="font-sans font-medium text-[14px] sm:text-[15px] leading-[1.4] text-ink"
               style={{
                 fontVariationSettings: "'opsz' 14",
               }}
@@ -349,7 +306,7 @@ export default function WaitlistForm() {
               value={formData.referralSourceOther}
               onChange={(e) => setFormData({ ...formData, referralSourceOther: e.target.value })}
               placeholder="Where did you hear about us?"
-              className="h-[44px] px-[16px] py-[8px] border border-[#d9d9d9] rounded-[4px] font-body text-[15px] sm:text-[16px] leading-[24px] text-rheti-neutral-600 focus:outline-none focus:border-rheti-primary-500"
+              className="h-[46px] px-[14px] border border-stone rounded bg-parchment font-sans text-[15px] sm:text-[16px] text-ink placeholder:text-mist focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/40 transition-colors"
               style={{
                 fontVariationSettings: "'opsz' 14",
               }}
@@ -362,12 +319,9 @@ export default function WaitlistForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full h-[48px] px-[24px] py-[12px] bg-white border border-black rounded-[100px] font-body font-semibold text-[15px] sm:text-[16px] leading-[24px] text-black hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{
-              fontVariationSettings: "'opsz' 14",
-            }}
+            className="w-full h-[48px] px-[24px] bg-clay rounded font-sans text-[15px] sm:text-[16px] text-parchment hover:bg-[#5f2d33] transition-colors duration-150 ease-editorial disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isLoading ? 'Joining...' : 'Join Waitlist'}
+            {isLoading ? 'Joining…' : 'Join waitlist'}
           </button>
         </div>
       </form>
