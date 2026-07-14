@@ -57,7 +57,7 @@ export default function FeedbackSection() {
           return (
             <motion.div
               key={index}
-              className="absolute w-[220px] sm:w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+              className="absolute w-[160px] sm:w-[200px] md:w-[240px] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
               style={{
                 left: pos.left,
                 top: pos.top,
