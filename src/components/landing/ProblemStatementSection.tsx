@@ -45,7 +45,7 @@ export default function ProblemStatementSection() {
       </div>
 
       {/* Text Content - Four statements with responsive flexbox layout */}
-      <div className="relative z-10 h-full flex flex-col gap-10 md:gap-0 md:justify-between pt-16 sm:pt-20 md:pt-[14vh] pb-12 sm:pb-16 md:pb-[10vh] px-5 sm:px-8 md:px-[7vw]">
+      <div className="relative z-10 h-full flex flex-col gap-10 md:gap-0 md:justify-between pt-20 sm:pt-24 md:pt-[18vh] pb-12 sm:pb-16 md:pb-[10vh] px-5 sm:px-8 md:px-[7vw]">
         {/* Statement 1 - Top Left */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
