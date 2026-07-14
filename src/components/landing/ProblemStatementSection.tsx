@@ -57,7 +57,7 @@ export default function ProblemStatementSection() {
             fontVariationSettings: "'opsz' 14",
           }}
         >
-          We all hold a vision of who we want to become, in our work, our relationships, and our
+          We all hold a vision of who we want to become-  in our work, our relationships, and our
           sense of self.
         </motion.p>
 
