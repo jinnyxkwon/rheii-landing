@@ -7,16 +7,14 @@ const stickerImages = [
   { src: '/images/landing/feedback 1.jpg', alt: 'Feedback 1', w: 260, h: 320 },
   { src: '/images/landing/community 1.png', alt: 'Community 1', w: 280, h: 280 },
   { src: '/images/landing/feedback 2.jpg', alt: 'Feedback 2', w: 240, h: 300 },
-  { src: '/images/landing/community 2.jpeg', alt: 'Community 2', w: 270, h: 270 },
   { src: '/images/landing/feedback 3.jpg', alt: 'Feedback 3', w: 250, h: 310 },
 ];
 
 const stickerPositions = [
   { left: '2%',  top: '5%',  rotate: 0 },
-  { left: '18%', top: '45%', rotate: 5 },
-  { left: '38%', top: '8%',  rotate: 0 },
-  { left: '55%', top: '50%', rotate: 7 },
-  { left: '75%', top: '12%', rotate: 0 },
+  { left: '25%', top: '45%', rotate: 5 },
+  { left: '48%', top: '8%',  rotate: 0 },
+  { left: '72%', top: '15%', rotate: 0 },
 ];
 
 export default function FeedbackSection() {
