@@ -67,7 +67,7 @@ export default function FeedbackSection() {
                 alt={img.alt}
                 width={img.w}
                 height={img.h}
-                className="w-full h-auto rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
+                className={`w-full h-auto ${img.src.includes('community') ? '' : 'rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.18)]'}`}
               />
             </motion.div>
           );
