@@ -22,6 +22,12 @@ export const WEBSITE_ASSETS = {
     selfIdentity: '/images/website-assets/theme-self-identity.png',
     work: '/images/website-assets/theme-work.png',
   },
+  communityGallery: {
+    dinner: '/images/website-assets/community-01.jpg',
+    circle: '/images/website-assets/community-02.jpg',
+    workshop: '/images/website-assets/community-03.jpg',
+    conversation: '/images/website-assets/community-04.jpg',
+  },
   communityBackground: '/images/website-assets/community.jpg',
   founderPortrait: '/images/website-assets/founder-portrait.jpg',
 } as const;

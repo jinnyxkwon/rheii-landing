@@ -204,6 +204,29 @@ main > div > section {
     transform: translateX(-50%);
   }
 }
+
+/* Editorial community gallery: hover motion is limited to precise pointers. */
+.community-photo-image {
+  transform: scale(1.01);
+  transition: transform 300ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .community-photo:hover .community-photo-image {
+    transform: scale(1.04);
+  }
+
+  .community-photo:hover .community-photo-wash {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-photo-image {
+    transform: none;
+    transition: none;
+  }
+}
 .marquee-track {
   animation-name: marquee-scroll;
   animation-timing-function: linear;
