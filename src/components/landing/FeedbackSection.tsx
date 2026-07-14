@@ -40,7 +40,7 @@ export default function FeedbackSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Feedback
+          Hear it from the Community
         </motion.h2>
       </div>
 
