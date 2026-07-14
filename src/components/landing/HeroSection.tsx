@@ -87,7 +87,7 @@ export default function HeroSection() {
             Your growth made visible.
           </h1>
           <p className="text-[18px] sm:text-[21px] leading-[28px] sm:leading-[32px] max-w-[460px] mt-[16px] font-light opacity-90">
-            Join other early members who are learning to navigate life from the inside out.
+            Join other early members navigating life from the inside out.
           </p>
           <a
             href="https://apps.apple.com/app/id6769975352"
