@@ -11,7 +11,6 @@
 
 import Navigation from '@/components/landing/Navigation';
 import CommunitySection from '@/components/community/CommunitySection';
-import EventsSection from '@/components/community/EventsSection';
 import LandingFooter from '@/components/landing/LandingFooter';
 
 export default function CommunityPage() {
@@ -19,9 +18,6 @@ export default function CommunityPage() {
     <main className="min-h-screen bg-[#fffdfa]">
       {/* Navigation */}
       <Navigation />
-
-      {/* Events Section */}
-      <EventsSection />
 
       {/* Community Section */}
       <CommunitySection />
