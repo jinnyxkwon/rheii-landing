@@ -20,7 +20,7 @@ const stickerPositions = [
 export default function FeedbackSection() {
   return (
     <section
-      className="relative w-full overflow-hidden py-20 md:py-32"
+      className="relative w-full overflow-hidden py-12 md:py-16"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -33,7 +33,7 @@ export default function FeedbackSection() {
         />
       </div>
       {/* Title */}
-      <div className="relative z-10 px-5 sm:px-8 md:px-[7vw] mb-16 md:mb-24">
+      <div className="relative z-10 px-5 sm:px-8 md:px-[7vw] mb-8 md:mb-12">
         <motion.h2
           className="font-heading font-normal text-[32px] sm:text-[40px] md:text-[48px] leading-[40px] sm:leading-[50px] md:leading-[58px] tracking-[-0.8px] text-center text-black"
           style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
@@ -47,7 +47,7 @@ export default function FeedbackSection() {
       </div>
 
       {/* Floating Sticker Images */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto h-[500px] sm:h-[600px] md:h-[700px] px-5 sm:px-8 md:px-[7vw]">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto h-[350px] sm:h-[400px] md:h-[450px] px-5 sm:px-8 md:px-[7vw]">
         {stickerImages.map((img, index) => {
           const pos = stickerPositions[index];
           return (
