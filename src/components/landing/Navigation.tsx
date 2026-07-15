@@ -124,7 +124,7 @@ export default function Navigation() {
                   href="https://apps.apple.com/us/app/rheii/id6769975352"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block px-4 py-3 text-[14px] leading-[20px] font-medium text-white bg-rheti-primary-500 hover:bg-rheti-primary-600"
+                  className="block px-4 py-3 text-[14px] leading-[20px] text-rheti-neutral-600 hover:bg-white"
                 >
                   Download
                 </a>
