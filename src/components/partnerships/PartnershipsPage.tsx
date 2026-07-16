@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function PartnershipsPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -47,6 +48,14 @@ export default function PartnershipsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+              <Image
+                src="/images/landing/brands.jpg"
+                alt="Brands partnership"
+                fill
+                className="object-cover"
+              />
+            </div>
             <h2
               className="font-heading font-normal text-[24px] sm:text-[28px] leading-[32px] sm:leading-[36px] text-[#4a1e2a] mb-4"
               style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
@@ -64,6 +73,14 @@ export default function PartnershipsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+              <Image
+                src="/images/landing/therapists.jpg"
+                alt="Practitioners partnership"
+                fill
+                className="object-cover"
+              />
+            </div>
             <h2
               className="font-heading font-normal text-[24px] sm:text-[28px] leading-[32px] sm:leading-[36px] text-[#4a1e2a] mb-4"
               style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
