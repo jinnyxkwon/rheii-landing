@@ -71,10 +71,10 @@ export default function PartnershipsPage() {
               For Practitioners
             </h2>
             <p className="font-body font-normal text-[16px] sm:text-[17px] leading-[26px] sm:leading-[28px] text-gray-700 mb-4">
-              Bridge the gap between your sessions. Whether you're a therapist or a life coach, Rheii integrates into your practice as a supportive, reflective space where your clients can process their thoughts in real-time.
+              Integrate Rheii into your sessions as a supportive, reflective space where your clients can process their thoughts in real-time.
             </p>
             <p className="font-body font-normal text-[16px] sm:text-[17px] leading-[26px] sm:leading-[28px] text-gray-700">
-              By bringing your practice onto Rheii, you give your clients a tool to maintain their momentum in-between sessions. Drive more intentional, targeted conversations with your clients, while giving them the agency to drive their own growth.
+              By bringing your practice onto Rheii, we help you drive more intentional, targeted conversations with your clients, while giving them the agency to drive their own growth.
             </p>
           </motion.div>
         </div>
