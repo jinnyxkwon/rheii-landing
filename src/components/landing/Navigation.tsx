@@ -49,15 +49,6 @@ export default function Navigation() {
         {/* Navigation Items + Waitlist */}
         <div className="hidden md:flex flex-nowrap items-center justify-end gap-2 sm:gap-3 md:gap-[24px] w-full">
           <a
-            href="/"
-            className="flex items-center gap-1 h-auto md:h-[80px] min-h-[32px] px-1 sm:px-2 cursor-pointer"
-          >
-            <p className="font-inter font-medium text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-rheti-neutral-600">
-              Home
-            </p>
-          </a>
-
-          <a
             href="/about"
             className="flex items-center gap-1 h-auto md:h-[80px] min-h-[32px] px-1 sm:px-2 cursor-pointer"
           >
@@ -72,6 +63,15 @@ export default function Navigation() {
           >
             <p className="font-inter font-medium text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-rheti-neutral-600">
               Community
+            </p>
+          </a>
+
+          <a
+            href="/partnerships"
+            className="flex items-center gap-1 h-auto md:h-[80px] min-h-[32px] px-1 sm:px-2 cursor-pointer"
+          >
+            <p className="font-inter font-medium text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-rheti-neutral-600">
+              Partnerships
             </p>
           </a>
 
@@ -102,12 +102,6 @@ export default function Navigation() {
           {isMenuOpen && (
             <div className="absolute right-0 top-[44px] w-[180px] rounded-[12px] border border-rheti-secondary-100 bg-white/95 backdrop-blur-md shadow-[0_12px_24px_rgba(0,0,0,0.12)] overflow-hidden">
               <a
-                href="/"
-                className="block px-4 py-3 text-[14px] leading-[20px] text-rheti-neutral-600 hover:bg-white"
-              >
-                Home
-              </a>
-              <a
                 href="/about"
                 className="block px-4 py-3 text-[14px] leading-[20px] text-rheti-neutral-600 hover:bg-white"
               >
@@ -118,6 +112,12 @@ export default function Navigation() {
                 className="block px-4 py-3 text-[14px] leading-[20px] text-rheti-neutral-600 hover:bg-white"
               >
                 Community
+              </a>
+              <a
+                href="/partnerships"
+                className="block px-4 py-3 text-[14px] leading-[20px] text-rheti-neutral-600 hover:bg-white"
+              >
+                Partnerships
               </a>
               <div className="border-t border-rheti-secondary-100">
                 <a
