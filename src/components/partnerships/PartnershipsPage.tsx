@@ -54,7 +54,7 @@ export default function PartnershipsPage() {
               For Brands
             </h2>
             <p className="font-body font-normal text-[16px] sm:text-[17px] leading-[26px] sm:leading-[28px] text-gray-700">
-              We collaborate with growth-minded brands that believe in intentional living. If your mission centers on self-development, mental wellness, and mindful alignment, Rheii offers a unique space to connect with a deeply engaged community.
+              We&apos;re always on the look out to collaborate with growth-minded brands that believe in intentional living. Rheii offers a unique space to connect with our growing, deeply engaged community. If your mission centers on self-development, mental wellness, and mindful alignment, we&apos;d love to chat.
             </p>
           </motion.div>
 
