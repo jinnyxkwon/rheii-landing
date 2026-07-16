@@ -136,7 +136,7 @@ export default function PartnershipsPage() {
                 {/* Partnership Type */}
                 <div>
                   <label htmlFor="type" className="block font-body font-medium text-[14px] leading-[20px] text-gray-700 mb-2">
-                    Select the partnership
+                    Partnership
                   </label>
                   <select
                     id="type"
