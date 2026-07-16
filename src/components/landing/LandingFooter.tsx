@@ -28,6 +28,13 @@ export default function LandingFooter() {
           >
             Connect with us
           </p>
+          <a
+            href="mailto:hello@rheii.com"
+            className="font-body font-normal text-[14px] leading-[21px] text-[#242424] hover:opacity-70 transition-opacity"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            hello@rheii.com
+          </a>
           <div className="flex gap-2 items-center">
             <Link
               href="https://www.instagram.com/withrheii/"
