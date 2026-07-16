@@ -97,7 +97,7 @@ export default function PartnershipsPage() {
                 className="font-heading font-normal text-[24px] sm:text-[28px] leading-[32px] sm:leading-[36px] text-black mb-8"
                 style={{ fontVariationSettings: "'GRAD' 0, 'wdth' 100" }}
               >
-                Partner with us
+Partner or Inquire
               </h3>
 
               <div className="flex flex-col gap-6">
