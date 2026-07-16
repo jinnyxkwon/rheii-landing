@@ -105,8 +105,12 @@ export default function CommunitySection() {
             }}
           >
             Through our community, growth becomes shared rather than solitary. Our offline
-            gatherings are designed around your needs, connecting you with like-minded people who
-            understand your context, grow alongside you, and challenge you constructively.
+            gatherings are designed around your exact needs and stage of life, picked up by Rheii.
+            Because your personal development isn&apos;t static, your network shouldn&apos;t be
+            either.
+            <br />
+            <br />
+            Coming soon to a postal code near you.
           </p>
         </div>
 
