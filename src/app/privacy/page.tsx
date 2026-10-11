@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
               fontVariationSettings: "'opsz' 14",
             }}
           >
-            Last Updated: December 2025
+            Last Updated: October 2026
           </p>
         </div>
 
@@ -316,6 +316,32 @@ export default function PrivacyPolicyPage() {
               </li>
             </ul>
           </div>
+        </section>
+
+        {/* Subscriptions */}
+        <section className="flex flex-col gap-[20px] mb-[48px]">
+          <h2
+            className="font-body font-semibold text-[20px] leading-[30px] text-[#322d29]"
+            style={{
+              fontVariationSettings: "'opsz' 14",
+            }}
+          >
+            Subscriptions
+          </h2>
+          <p
+            className="font-body text-[16px] leading-[24px] text-[#322d29]"
+            style={{
+              fontVariationSettings: "'opsz' 14",
+            }}
+          >
+            Rheii Premium is sold through Apple. Apple handles all payments, and we never see your
+            card or payment details. When you subscribe, we keep a record of your plan, when it
+            renews or ends, and whether it&rsquo;s active, linked to your Rheii account, so we can
+            unlock Premium on any device you sign in to. We also record when a subscription starts,
+            renews, is cancelled or refunded, to understand how Rheii is used. If you were sent a
+            founding member code, we store which account used it. To cancel, go to Settings &rarr;
+            Apple ID &rarr; Subscriptions on your iPhone.
+          </p>
         </section>
 
         {/* Data Security */}
